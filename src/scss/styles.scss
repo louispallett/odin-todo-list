@@ -1,8 +1,12 @@
+@use "item-info";
+@use "content";
 @import "bootstrap/scss/bootstrap";
 
-$content-box: #fff;
-$footer: #222;
-$footer-font: #fff;
+@font-face {
+    font-family: "custom-font";
+    src: url("../custom-font.woff2") format("woff2"),
+    url("../custom-font.woff") format("woff");
+}
 
 body {
     background-color:#fafafa;
@@ -16,25 +20,4 @@ body, html {
 
 * {
     box-sizing:border-box;
-}
-
-content {
-    display:block;
-}
-
-body > content {
-    padding:40px;
-    margin:auto;
-    width: clamp(300px, 700px, 1000px);
-    max-width:100%;
-    & > content {
-        background-color: $content-box;
-        min-height:600px; // to look cool
-        border-radius:20px;
-        box-shadow:10px 10px 40px rgba(0,0,0,0.06);
-        padding:40px;
-    }
-    & > .accordion-item {
-        min-width: 200px; 
-    }
 }
