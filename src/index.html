@@ -21,8 +21,22 @@
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse">
               <div class="title-wrapper">
-                <div class="accordion-body" id="short-title">Short Title</div>
+                <div class="item-top">
+                  <div class="accordion-body" id="short-title">Short Title</div>
+                </div>
                 <div class="accordion-body" id="description">Description</div>
+              </div>
+              <div id="priorities">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                  <label class="btn btn-outline-danger" for="btnradio1">High</label>
+                
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                  <label class="btn btn-outline-warning" for="btnradio2">Medium</label>
+                
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                  <label class="btn btn-outline-success" for="btnradio3">Low</label>
+                </div>
               </div>
             </div>
           </div>

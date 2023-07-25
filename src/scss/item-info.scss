@@ -5,11 +5,23 @@
 }
 
 .title-wrapper {
-    background-color: rgb(97, 100, 255);
+    background-color: rgb(80, 112, 255);
 }
 
-#short-title {
+#priorities {
+    background-color: rgb(154, 173, 255);;
+}
+
+.btn-group > label {
+    font-weight: bold;
+    border: none;
+    margin: 5px 10px;
+}
+
+.item-top {
     font-weight: bold;
     border-bottom: 2px solid white;
     padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
 }
