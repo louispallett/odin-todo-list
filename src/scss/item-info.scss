@@ -1,27 +1,32 @@
 .accordion-body {
     color: white;
     font-size: 1rem;
-    margin: 0px 10px;
 }
 
 .title-wrapper {
     background-color: rgb(80, 112, 255);
+    padding: 0 20px;
 }
 
 #priorities {
-    background-color: rgb(154, 173, 255);;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    align-items: center;
+    font-size: 1rem;
+    background-color: rgb(233, 233, 233);
+    font-weight: bold;
+    padding: 10px 5px;
+    &div:first-child {
+        color: white;
+    }
 }
 
 .btn-group > label {
-    font-weight: bold;
     border: none;
-    margin: 5px 10px;
+    font-weight: bold;
 }
 
 .item-top {
-    font-weight: bold;
     border-bottom: 2px solid white;
-    padding-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
 }
