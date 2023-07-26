@@ -40,3 +40,14 @@ content {
         background-color: rgb(126, 252, 126);;
     }
 }
+
+// TODO: this isn't pulling through - may be due to the CSS variables (although these should work)
+// or the data-bs-custom-class (although did move to #new, still didn't pull through).
+.custom-popover {
+    --bs-popover-max-width: 200px;
+    --bs-popover-border-color: var(--bs-primary);
+    --bs-popover-header-bg: var(--bs-primary);
+    --bs-popover-header-color: var(--bs-white);
+    --bs-popover-body-padding-x: 1rem;
+    --bs-popover-body-padding-y: .5rem;
+  }

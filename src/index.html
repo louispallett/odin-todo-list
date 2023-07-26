@@ -10,21 +10,27 @@
       <content class="container px-3">
         <div class="container-fluid" id="new-holder">
           <div>Organize Me!</div>
-          <button type="button" class="btn btn-success" id="new">New</button>
+          <!-- <button type="button" class="btn btn-danger" id="new" data-bs-toggle="popover" data-bs-title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">New</button> -->
+          <button type="button" class="btn btn-secondary"
+            data-bs-toggle="popover" data-bs-placement="left"
+            data-bs-custom-class="custom-popover"
+            data-bs-title="Custom popover" id="new"
+            data-bs-content="This popover is themed via CSS variables.">
+            New
+          </button>
         </div>
         <div class="accordion" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Item #1
+                <div class="button-wrapper">
+                  <div class="title">Item #1</div>
+                  <div id="date">DueDate</div>
+                </div>
               </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse">
               <div class="title-wrapper">
-                <div class="item-top">
-                  <div class="accordion-body" id="date">Date</div>
-                  <div class="accordion-body" id="complete">Complete?</div>
-                </div>
                 <div class="accordion-body" id="description">Description</div>
               </div>
               <div id="priorities">
