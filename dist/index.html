@@ -16,6 +16,7 @@
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#newItem" aria-expanded="true" aria-controls="newItem">
                 <div class="button-wrapper">
+                  <!-- Maybe add popover here to let user know to click here to add an item? -->
                   <div class="title">Add an item</div>
                 </div>
               </button>
@@ -23,25 +24,32 @@
             <div id="newItem" class="accordion-collapse collapse">
               <div class="title-wrapper">
                 <div class="accordion-body" id="newForm">
-                  <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Clean the Kitchen">
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                    <textarea class="form-control" id="description" rows="3" placeholder="Do the dishes, clean the oven, vacuum and mop the floor."></textarea>
-                  </div>
-                </div>
-              </div>
-              <div id="priorities">
-                <div>Priority:</div>
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                  <label class="btn btn-outline-success" for="btnradio3">Low</label>
-                  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked>
-                  <label class="btn btn-outline-warning" for="btnradio2">Medium</label>
-                  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                  <label class="btn btn-outline-danger" for="btnradio1">High</label>
+                  <form action="#">
+                    <div class="mb-3">
+                      <label for="newTitle" class="form-label">Title</label>
+                      <!-- Add character limit (20?) -->
+                      <input type="text" class="form-control" id="newTitle" placeholder="Clean the Kitchen">
+                    </div>
+                    <div class="mb-3">
+                      <label for="newDescription" class="form-label">Description</label>
+                      <!-- Add popOver here to let the user know they can resize the textarea -->
+                      <textarea class="form-control" id="newDescription" rows="3" placeholder="Do the dishes, clean the oven, vacuum and mop the floor."></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <div class="mb-3">
+                        <label for="priority" class="form-label">Priority</label>
+                        <select class="form-select" aria-label="priority">
+                          <option value="low">Low</option>
+                          <option value="medium">Medium</option>
+                          <option value="high">High</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="completionDate" class="form-label">Deadline</label>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit" id="submitItem">Submit</button>
+                  </form>
                 </div>
               </div>
             </div>

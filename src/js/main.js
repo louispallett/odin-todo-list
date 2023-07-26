@@ -5,7 +5,15 @@ import '../scss/styles.scss'
 import * as bootstrap from 'bootstrap' 
 
 
-const newItem = (() => {
-    const container = document.getElementById("accordionExample");
-    console.log(container);
-});
+// const newItem = (() => {
+//     const container = document.getElementById("accordionExample");
+//     console.log(container);
+// });
+
+const submitNewItem = (() => {
+    const submitItem = document.getElementById("submitItem");
+
+    submitItem.addEventListener("click", (event) => {
+        event.preventDefault();
+    });
+})();

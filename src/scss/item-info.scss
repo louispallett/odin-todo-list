@@ -3,12 +3,12 @@
 }
 
 .accordion-body {
-    color: white;
+    color: black;
     font-size: 1rem;
 }
 
 .title-wrapper {
-    background-color: rgb(87, 90, 230);
+    background-color: rgb(192, 193, 255);
 }
 
 #priorities {
@@ -29,4 +29,9 @@
 
 .item-top {
     border-bottom: 2px solid white;
+}
+
+.mb-3 > label {
+    font-weight: bold;
+    font-size: 1.2rem;
 }
