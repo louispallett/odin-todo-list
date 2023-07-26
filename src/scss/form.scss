@@ -3,3 +3,13 @@
     border: 1px solid rgb(14, 115, 247); 
     color: white;
 }
+
+.prio-deadline {
+    display: flex;
+    justify-content: space-between;
+}
+
+#submit-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
