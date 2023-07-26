@@ -17,3 +17,13 @@ const submitNewItem = (() => {
         event.preventDefault();
     });
 })();
+
+// const highPrio = document.getElementById("btnradio2");
+// console.log(highPrio);
+
+// // We can check whether a priority is checked like so
+// if(highPrio.checked) {
+//     console.log("Hey");
+// } else {
+//     console.log("Not hey");
+// }

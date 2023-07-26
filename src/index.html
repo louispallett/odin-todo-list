@@ -26,27 +26,20 @@
                 <div class="accordion-body" id="newForm">
                   <form action="#">
                     <div class="mb-3">
-                      <label for="newTitle" class="form-label">Title</label>
                       <!-- Add character limit (20?) -->
-                      <input type="text" class="form-control" id="newTitle" placeholder="Clean the Kitchen">
+                      <input type="text" class="form-control" id="newTitle" placeholder="Title">
                     </div>
                     <div class="mb-3">
-                      <label for="newDescription" class="form-label">Description</label>
                       <!-- Add popOver here to let the user know they can resize the textarea -->
-                      <textarea class="form-control" id="newDescription" rows="3" placeholder="Do the dishes, clean the oven, vacuum and mop the floor."></textarea>
+                      <textarea class="form-control" id="newDescription" rows="3" placeholder="Notes"></textarea>
                     </div>
-                    <div class="mb-3">
-                      <div class="mb-3">
-                        <label for="priority" class="form-label">Priority</label>
-                        <select class="form-select" aria-label="priority">
-                          <option value="low">Low</option>
-                          <option value="medium">Medium</option>
-                          <option value="high">High</option>
-                        </select>
-                      </div>
-                      <div class="mb-3">
-                        <label for="completionDate" class="form-label">Deadline</label>
-                      </div>
+                    <div class="input-group mb-3">
+                      <label class="input-group-text" for="inputGroupSelect01">Priority</label>
+                      <select class="form-select" id="inputGroupSelect01">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                      </select>
                     </div>
                     <button class="btn btn-primary" type="submit" id="submitItem">Submit</button>
                   </form>
@@ -69,7 +62,7 @@
               </div>
               <div id="priorities">
                 <div>Priority:</div>
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group" id="priorities-group">
                   <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
                   <label class="btn btn-outline-success" for="btnradio3">Low</label>
                   <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked>
