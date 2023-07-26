@@ -1,10 +1,3 @@
-.button-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 5px;
-}
-
 #date {
     font-style: italic;
 }
@@ -15,7 +8,7 @@
 }
 
 .title-wrapper {
-    background-color: rgb(80, 112, 255);
+    background-color: rgb(87, 90, 230);
 }
 
 #priorities {
@@ -27,9 +20,6 @@
     background-color: rgb(230, 245, 253);
     font-weight: bold;
     padding: 10px 5px;
-    &div:first-child {
-        color: white;
-    }
 }
 
 .btn-group > label {
