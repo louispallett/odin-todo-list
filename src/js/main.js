@@ -6,22 +6,21 @@ import * as bootstrap from 'bootstrap'
 
 let items = [];
 
-// const newItem = (() => {
-//     const container = document.getElementById("accordionExample");
-//     console.log(container);
-// });
+const newItem = (() => {
 
-const submitNewItem = (() => {
-    const submitItem = document.getElementById("submitItem");
+    const addNewItem = () => {
+        const newTitle = document.getElementById("newTitle").textContent;
+        const newDescription = document.getElementById("newDescription").textContent;
+        const newPriority = document.getElementById("priority").textContent;
+        const newDeadline = document.getElementById("deadline").value;
 
-    submitItem.addEventListener("click", (event) => {
-        event.preventDefault();
+        const newItem = new Item(newTitle, newDescription, newPriority, newDeadline);
+    }
 
-        // New item function
-    });
+    return {newItem}
+});
 
 
-})();
 
 class Item {
     constructor(title, notes, priority, deadline) {
@@ -29,12 +28,13 @@ class Item {
         this.notes = notes;
         this.priority = priority;
         this.deadline = deadline;
+
+        this.addItem();
     }
 
-    // Not loading function!
     addItem = () => {
-        // items.push(this);
-        console.log(this);
+        items.push(this);
+        console.log(items);
     }
 
     // pushItem = () => {
@@ -44,19 +44,32 @@ class Item {
 }
 
 const myItem = new Item("Clean Kitchen", "Clean the kitchen, bro", "High", "22/07/2023");
-// items.push(myItem);
-
-console.log(myItem);
-console.log(items);
+// console.log(myItem);
 
 
 
-// const highPrio = document.getElementById("btnradio2");
-// console.log(highPrio);
+// CHECK VALUE OF PRIORITY
+    // const highPrio = document.getElementById("btnradio2");
+    // console.log(highPrio);
 
-// // We can check whether a priority is checked like so
-// if(highPrio.checked) {
-//     console.log("Hey");
-// } else {
-//     console.log("Not hey");
-// }
+    // // We can check whether a priority is checked like so
+    // if(highPrio.checked) {
+    //     console.log("Hey");
+    // } else {
+    //     console.log("Not hey");
+    // }
+
+
+// SUBMIT BUTTON
+    // const submitNewItem = (() => {
+    //     const submitItem = document.getElementById("submitItem");
+
+    //     submitItem.addEventListener("click", (event) => {
+    //         event.preventDefault();
+
+    //         // Class function
+    //         newItem();
+    //     });
+
+
+    // })();
