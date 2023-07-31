@@ -41,28 +41,39 @@ class Item {
         console.log(items);
     }
 
-    pushItem = (title, deadline) => {
-    
+    pushItem = (title, deadline) => {  
         const accordionContainer = document.getElementById("accordionExample");
-        const accordionItem = document.createElement("div");
-        accordionItem.classList.add("accordion-item");
-        const accordionHeader = document.createElement("h2");
-        accordionHeader.classList.add("accordion-header");
-        const accordionButton = document.createElement("div");
-        accordionButton.classList.add("accordion-button", "collapsed");
-        const buttonWrapper = document.createElement("div");
-        buttonWrapper.classList.add("button-wrapper");
-        const titleElement = document.createElement("div");
-        titleElement.classList.add("title");
-        titleElement.textContent = `${title}`;
-        const dueDate = document.createElement("div");
-        dueDate.setAttribute("id", "date");
-        dueDate.textContent = `${deadline}`;
-        buttonWrapper.appendChild(titleElement);
-        buttonWrapper.appendChild(dueDate);
-        accordionButton.appendChild(buttonWrapper);
-        accordionHeader.appendChild(accordionButton);
-        accordionItem.appendChild(accordionHeader);
+
+        // Accordion Header
+            const accordionItem = document.createElement("div");
+            accordionItem.classList.add("accordion-item");
+            const accordionHeader = document.createElement("h2");
+            accordionHeader.classList.add("accordion-header");
+            const accordionButton = document.createElement("button");
+            accordionButton.classList.add("accordion-button", "collapsed");
+            accordionButton.type = "button";
+            accordionButton["data-bs-toggle"] = "collapse";
+            accordionButton["data-bs-target"] = "#collapseOne";
+            accordionButton["aria-expanded"] = "true";
+            accordionButton["aria-controls"] = "collapseOne";
+            const buttonWrapper = document.createElement("div");
+            buttonWrapper.classList.add("button-wrapper");
+            const titleElement = document.createElement("div");
+            titleElement.classList.add("title");
+            titleElement.textContent = `${title}`;
+            const dueDate = document.createElement("div");
+            dueDate.setAttribute("id", "date");
+            dueDate.textContent = `${deadline}`;
+            buttonWrapper.appendChild(titleElement);
+            buttonWrapper.appendChild(dueDate);
+            accordionButton.appendChild(buttonWrapper);
+            accordionHeader.appendChild(accordionButton);
+            accordionItem.appendChild(accordionHeader);
+        
+        // Accordion Body
+
+            
+
         accordionContainer.appendChild(accordionItem);
 
     }
