@@ -147,35 +147,10 @@ class Item {
             accordionItem.appendChild(collapseElement);
         accordionContainer.appendChild(accordionItem);
     }
-
-
-
-    // addItem(title, description, priority, deadline);
-
-
-    // pushItem = () => {
-    //     // See odin-library (classes)
-    //     for(let i = 0; i < )
-    // }
 }
 
-// const myItem = new Item("Clean Kitchen", "Clean the kitchen, bro", "low", "22/07/2023");
+// const myItem = new HighItem("Clean Kitchen", "Clean the kitchen, bro", "high", "22/07/2023");
 // const myItem2 = new Item("Bills", "Pay the water, gas, and electricity bill", "Low", "11/05/2023");
-
-
-
-
-// CHECK VALUE OF PRIORITY
-    // const highPrio = document.getElementById("btnradio2");
-    // console.log(highPrio);
-
-    // // We can check whether a priority is checked like so
-    // if(highPrio.checked) {
-    //     console.log("Hey");
-    // } else {
-    //     console.log("Not hey");
-    // }
-
 
 // SUBMIT BUTTON
     const submitNewItem = (() => {
@@ -191,6 +166,14 @@ class Item {
             
             const newUserItem = new Item(titleValue, descriptionValue, priorityValue, deadlineValue);
         });
-
-
     })();
+
+// Using Extended classes
+    // May be an idea to do an extension for classes with certain priorities - such as 
+    // 'class HighItem extends Item', which, if the priorityValue == 'high' will have 
+    // radio3 checked?
+
+// Radio Button Issue
+    // Because the radio buttons are all given the same 'for' and 'id' when each class is 
+    // created, you can only select one - could fix this through items.length? Like with 
+    // collapse${items.length}?
