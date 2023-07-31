@@ -134,14 +134,6 @@ class Item {
             label3.setAttribute("for", "btnradio1");
             label3.textContent = "High";
 
-            if(itemPriority == "low") {
-                radioInput1.checked = true;
-            } else if (itemPriority == "medium") {
-                radioInput2.checked = true;
-            } else {
-                radioInput3.checked = true;
-            }
-
             priorityBtnGrp.appendChild(radioInput1);
             priorityBtnGrp.appendChild(label1);
             priorityBtnGrp.appendChild(radioInput2);
@@ -154,7 +146,6 @@ class Item {
             
             accordionItem.appendChild(collapseElement);
         accordionContainer.appendChild(accordionItem);
-
     }
 
 
@@ -187,15 +178,19 @@ class Item {
 
 
 // SUBMIT BUTTON
-    // const submitNewItem = (() => {
-    //     const submitItem = document.getElementById("submitItem");
+    const submitNewItem = (() => {
+        const submitItem = document.getElementById("submitItem");
 
-    //     submitItem.addEventListener("click", (event) => {
-    //         event.preventDefault();
+        submitItem.addEventListener("click", (event) => {
+            event.preventDefault();
 
-    //         // Class function
-    //         newItem.addNewItem();
-    //     });
+            const titleValue = document.getElementById("newTitle").value;
+            const descriptionValue = document.getElementById("newDescription").value;
+            const priorityValue = document.getElementById("priority").value;
+            const deadlineValue = document.getElementById("deadline").value;
+            
+            const newUserItem = new Item(titleValue, descriptionValue, priorityValue, deadlineValue);
+        });
 
 
-    // })();
+    })();

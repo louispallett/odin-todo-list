@@ -5,14 +5,14 @@ $footer: #222;
 $footer-font: #fff;
 $new-colour: rgb(56, 177, 56);
 
-content {
+#content-outer {
     display:block;
     padding: 40px;
     margin: auto;
     width: clamp(300px, 700px, 1000px);
     font-size: 1.5rem;
     max-width: 100%;
-    & > content {
+    & > div {
         background-color: $content-box;
         min-height: 600px;
         border-radius: 20px;
