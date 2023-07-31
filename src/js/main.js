@@ -6,36 +6,71 @@ import * as bootstrap from 'bootstrap'
 
 let items = [];
 
-const newItem = (() => {
+// const newItem = (() => {
 
-    const addNewItem = () => {
-        const newTitle = document.getElementById("newTitle").textContent;
-        const newDescription = document.getElementById("newDescription").textContent;
-        const newPriority = document.getElementById("priority").textContent;
-        const newDeadline = document.getElementById("deadline").value;
+//     const addNewItem = () => {
+//         const newTitle = document.getElementById("newTitle").value;
+//         const newDescription = document.getElementById("newDescription").value;
+//         const newPriority = document.getElementById("priority").value;
+//         const newDeadline = document.getElementById("deadline").value;
 
-        const newItem = new Item(newTitle, newDescription, newPriority, newDeadline);
-    }
+//         const newItem = new Item(newTitle, newDescription, newPriority, newDeadline);
+//     }
 
-    return {newItem}
-});
+//     console.log(newItem);
+
+//     return {addNewItem}
+// })();
+
 
 
 
 class Item {
-    constructor(title, notes, priority, deadline) {
+    constructor(title, description, priority, deadline) {
         this.title = title;
-        this.notes = notes;
+        this.description = description;
         this.priority = priority;
         this.deadline = deadline;
 
         this.addItem();
+        this.pushItem(title, deadline)
     }
 
     addItem = () => {
         items.push(this);
         console.log(items);
     }
+
+    pushItem = (title, deadline) => {
+    
+        const accordionContainer = document.getElementById("accordionExample");
+        const accordionItem = document.createElement("div");
+        accordionItem.classList.add("accordion-item");
+        const accordionHeader = document.createElement("h2");
+        accordionHeader.classList.add("accordion-header");
+        const accordionButton = document.createElement("div");
+        accordionButton.classList.add("accordion-button", "collapsed");
+        const buttonWrapper = document.createElement("div");
+        buttonWrapper.classList.add("button-wrapper");
+        const titleElement = document.createElement("div");
+        titleElement.classList.add("title");
+        titleElement.textContent = `${title}`;
+        const dueDate = document.createElement("div");
+        dueDate.setAttribute("id", "date");
+        dueDate.textContent = `${deadline}`;
+        buttonWrapper.appendChild(titleElement);
+        buttonWrapper.appendChild(dueDate);
+        accordionButton.appendChild(buttonWrapper);
+        accordionHeader.appendChild(accordionButton);
+        accordionItem.appendChild(accordionHeader);
+        accordionContainer.appendChild(accordionItem);
+
+    }
+
+
+
+    // addItem(title, description, priority, deadline);
+
 
     // pushItem = () => {
     //     // See odin-library (classes)
@@ -45,6 +80,8 @@ class Item {
 
 const myItem = new Item("Clean Kitchen", "Clean the kitchen, bro", "High", "22/07/2023");
 // console.log(myItem);
+const myItem2 = new Item("Bills", "Pay the water, gas, and electricity bill", "High", "11/05/2023");
+
 
 
 
@@ -68,7 +105,7 @@ const myItem = new Item("Clean Kitchen", "Clean the kitchen, bro", "High", "22/0
     //         event.preventDefault();
 
     //         // Class function
-    //         newItem();
+    //         newItem.addNewItem();
     //     });
 
 
