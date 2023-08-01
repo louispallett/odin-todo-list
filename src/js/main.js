@@ -205,8 +205,16 @@ class LowItem extends Item {
             const descriptionValue = document.getElementById("newDescription").value;
             const priorityValue = document.getElementById("priority").value;
             const deadlineValue = document.getElementById("deadline").value;
+
+            if(descriptionValue == "low") {
+                const newUserItem = new LowItem(titleValue, descriptionValue, deadlineValue, priorityValue);
+            } else if(descriptionValue == "medium") {
+                const newUserItem = new MediumItem(titleValue, descriptionValue, deadlineValue, priorityValue);
+            } else {
+                const newUserItem = new HighItem(titleValue, descriptionValue, deadlineValue, priorityValue);
+            }
             
-            const newUserItem = new Item(titleValue, descriptionValue, deadlineValue, priorityValue);
+            // const newUserItem = new Item(titleValue, descriptionValue, deadlineValue, priorityValue);
         });
     })();
 
