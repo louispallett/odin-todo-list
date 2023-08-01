@@ -26,14 +26,13 @@ let items = [];
 
 
 class Item {
-    constructor(title, description, priority, deadline) {
+    constructor(title, description, deadline) {
         this.title = title;
         this.description = description;
-        this.priority = priority;
         this.deadline = deadline;
 
         this.addItem();
-        this.pushItem(title, description, deadline, priority)
+        this.pushItem(title, description, deadline)
     }
 
     addItem = () => {
@@ -41,7 +40,7 @@ class Item {
         console.log(items);
     }
 
-    pushItem = (title, description, deadline, itemPriority) => {      
+    pushItem = (title, description, deadline) => {      
             const accordionContainer = document.getElementById("accordionExample");
 
         // New Accordion Item (whole wrapper)
@@ -103,35 +102,33 @@ class Item {
             radioInput1.setAttribute("type", "radio");
             radioInput1.setAttribute("class", "btn-check");
             radioInput1.setAttribute("name", "btnradio");
-            radioInput1.setAttribute("id", "btnradio3");
+            radioInput1.setAttribute("id", `btnradio1`);
             radioInput1.setAttribute("autocomplete", "off");
             const label1 = document.createElement("label");
             label1.setAttribute("class", "btn btn-outline-success");
-            label1.setAttribute("for", "btnradio3");
+            label1.setAttribute("for", `btnradio1`);
             label1.textContent = "Low";
 
-            // Create the second radio input and its corresponding label
             const radioInput2 = document.createElement("input");
             radioInput2.setAttribute("type", "radio");
             radioInput2.setAttribute("class", "btn-check");
             radioInput2.setAttribute("name", "btnradio");
-            radioInput2.setAttribute("id", "btnradio2");
+            radioInput2.setAttribute("id", `btnradio2`);
             radioInput2.setAttribute("autocomplete", "off");
             const label2 = document.createElement("label");
             label2.setAttribute("class", "btn btn-outline-warning");
-            label2.setAttribute("for", "btnradio2");
+            label2.setAttribute("for", `btnradio2`);
             label2.textContent = "Medium";
 
-            // Create the third radio input and its corresponding label
             const radioInput3 = document.createElement("input");
             radioInput3.setAttribute("type", "radio");
             radioInput3.setAttribute("class", "btn-check");
             radioInput3.setAttribute("name", "btnradio");
-            radioInput3.setAttribute("id", "btnradio1");
+            radioInput3.setAttribute("id", `btnradio3`);
             radioInput3.setAttribute("autocomplete", "off");
             const label3 = document.createElement("label");
             label3.setAttribute("class", "btn btn-outline-danger");
-            label3.setAttribute("for", "btnradio1");
+            label3.setAttribute("for", `btnradio3`);
             label3.textContent = "High";
 
             priorityBtnGrp.appendChild(radioInput1);
@@ -149,8 +146,53 @@ class Item {
     }
 }
 
-// const myItem = new HighItem("Clean Kitchen", "Clean the kitchen, bro", "high", "22/07/2023");
-// const myItem2 = new Item("Bills", "Pay the water, gas, and electricity bill", "Low", "11/05/2023");
+// Using Extended classes
+    // May be an idea to do an extension for classes with certain priorities - such as 
+    // 'class HighItem extends Item', which, if the priorityValue == 'high' will have 
+    // radio3 checked?
+
+class HighItem extends Item {
+    constructor(title, description, deadline, itemPriority) {
+        super(title, description, deadline, itemPriority);
+        this.itemPriority = itemPriority;
+
+        this.writePriority();
+    }
+
+    writePriority = () => {
+        console.log(this.itemPriority);
+    }
+}
+
+class MediumItem extends Item {
+    constructor(title, description, deadline, itemPriority) {
+        super(title, description, deadline, itemPriority);
+        this.itemPriority = itemPriority;
+
+        this.writePriority();
+    }
+
+    writePriority = () => {
+        console.log(this.itemPriority);
+    }
+}
+
+class LowItem extends Item {
+    constructor(title, description, deadline, itemPriority) {
+        super(title, description, deadline, itemPriority);
+        this.itemPriority = itemPriority;
+
+        this.writePriority();
+    }
+
+    writePriority = () => {
+        console.log(this.itemPriority);
+    }
+}
+
+// const myHighItem = new HighItem("High Item", "Clean the kitchen, bro", "22/07/2023", "high");
+// const myMediumItem = new MediumItem("Medium Item", "Clean the kitchen, bro", "22/07/2023", "medium");
+// const myLowItem = new LowItem("Low Item", "Clean the kitchen, bro", "22/07/2023", "low");
 
 // SUBMIT BUTTON
     const submitNewItem = (() => {
@@ -164,14 +206,11 @@ class Item {
             const priorityValue = document.getElementById("priority").value;
             const deadlineValue = document.getElementById("deadline").value;
             
-            const newUserItem = new Item(titleValue, descriptionValue, priorityValue, deadlineValue);
+            const newUserItem = new Item(titleValue, descriptionValue, deadlineValue, priorityValue);
         });
     })();
 
-// Using Extended classes
-    // May be an idea to do an extension for classes with certain priorities - such as 
-    // 'class HighItem extends Item', which, if the priorityValue == 'high' will have 
-    // radio3 checked?
+
 
 // Radio Button Issue
     // Because the radio buttons are all given the same 'for' and 'id' when each class is 
