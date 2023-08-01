@@ -157,10 +157,15 @@ class HighItem extends Item {
         this.itemPriority = itemPriority;
 
         this.writePriority();
+        this.setPriority(itemPriority);
     }
 
     writePriority = () => {
         console.log(this.itemPriority);
+    }
+
+    setPriority = () => {
+
     }
 }
 
@@ -170,10 +175,15 @@ class MediumItem extends Item {
         this.itemPriority = itemPriority;
 
         this.writePriority();
+        this.setPriority(itemPriority);
     }
 
     writePriority = () => {
         console.log(this.itemPriority);
+    }
+
+    setPriority = () => {
+        
     }
 }
 
@@ -183,10 +193,15 @@ class LowItem extends Item {
         this.itemPriority = itemPriority;
 
         this.writePriority();
+        this.setPriority(itemPriority);
     }
 
     writePriority = () => {
         console.log(this.itemPriority);
+    }
+
+    setPriority = () => {
+        
     }
 }
 
