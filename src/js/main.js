@@ -18,11 +18,10 @@ class Item {
 
     addItem = () => {
         items.push(this);
-        console.log(items);
     }
 
     pushItem = (title, description, deadline) => {      
-            const accordionContainer = document.getElementById("accordionExample");
+        const accordionContainer = document.getElementById("accordionExample");
 
         // New Accordion Item (whole wrapper)
             const accordionItem = document.createElement("div");
@@ -70,7 +69,7 @@ class Item {
             const priorityElement = document.createElement("div");
             priorityElement.setAttribute("id", "priorities");
             const priorityTitle = document.createElement("div");
-            priorityTitle.textContent = "Priority:"
+            // priorityTitle.textContent = "Priority:"
             priorityElement.appendChild(priorityTitle);
             const priorityBtnGrp = document.createElement("div");
             priorityBtnGrp.classList.add("btn-group");
@@ -137,7 +136,6 @@ class HighItem extends Item {
         super(title, description, deadline);
         this.itemPriority = itemPriority;
 
-        this.writePriority();
         this.setPriority(itemPriority);
     }
 
@@ -152,7 +150,6 @@ class MediumItem extends Item {
         super(title, description, deadline);
         this.itemPriority = itemPriority;
 
-        this.writePriority();
         this.setPriority(itemPriority);
     }
 
@@ -167,7 +164,6 @@ class LowItem extends Item {
         super(title, description, deadline);
         this.itemPriority = itemPriority;
 
-        this.writePriority();
         this.setPriority(itemPriority);
     }
 

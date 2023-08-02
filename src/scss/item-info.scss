@@ -18,11 +18,11 @@
 
 #priorities {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 5px;
     align-items: center;
     font-size: 1rem;
-    background-color: rgb(230, 245, 253);
+    background-color: rgb(141, 214, 253);
     font-weight: bold;
     padding: 10px 5px;
 }
@@ -34,4 +34,27 @@
 
 .item-top {
     border-bottom: 2px solid white;
+}
+
+.icon-wrapper {
+    margin: 0px 5px;
+    gap: 5px;
+    background-position:center;
+    display: flex;
+    & > div {
+        padding: 10px;
+    }
+    & > div:hover {
+        background-color: rgb(230, 245, 253);
+        border-radius: 100%;
+        cursor: pointer;
+    }
+}
+
+.edit-icon {
+    background-image: url("../edit.svg");
+}
+
+.delete-icon {
+    background-image: url("../delete.svg");
 }
