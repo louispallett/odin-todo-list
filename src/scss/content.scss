@@ -27,7 +27,7 @@ $new-colour: rgb(56, 177, 56);
 
 #new-holder {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-weight: bold;
     padding-bottom: 10px;
@@ -35,4 +35,9 @@ $new-colour: rgb(56, 177, 56);
 
 #new-holder > div:first-child {
     font-family: "custom-font";
+}
+
+.main-icon {
+    padding: 20px;
+    background-image: url(../new-icon.svg);
 }
