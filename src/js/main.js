@@ -45,7 +45,7 @@ class Item {
             titleElement.textContent = `${title}`;
             const dueDate = document.createElement("div");
             dueDate.setAttribute("id", "date");
-            dueDate.textContent = `${deadline}`;
+            dueDate.textContent = `Complete by: ${deadline}`;
             buttonWrapper.appendChild(titleElement);
             buttonWrapper.appendChild(dueDate);
             accordionButton.appendChild(buttonWrapper);
@@ -134,15 +134,11 @@ class Item {
 
 class HighItem extends Item {
     constructor(title, description, deadline, itemPriority) {
-        super(title, description, deadline, itemPriority);
+        super(title, description, deadline);
         this.itemPriority = itemPriority;
 
         this.writePriority();
         this.setPriority(itemPriority);
-    }
-
-    writePriority = () => {
-        console.log(this.itemPriority);
     }
 
     setPriority = () => {
@@ -153,15 +149,11 @@ class HighItem extends Item {
 
 class MediumItem extends Item {
     constructor(title, description, deadline, itemPriority) {
-        super(title, description, deadline, itemPriority);
+        super(title, description, deadline);
         this.itemPriority = itemPriority;
 
         this.writePriority();
         this.setPriority(itemPriority);
-    }
-
-    writePriority = () => {
-        console.log(this.itemPriority);
     }
 
     setPriority = () => {
@@ -172,15 +164,11 @@ class MediumItem extends Item {
 
 class LowItem extends Item {
     constructor(title, description, deadline, itemPriority) {
-        super(title, description, deadline, itemPriority);
+        super(title, description, deadline);
         this.itemPriority = itemPriority;
 
         this.writePriority();
         this.setPriority(itemPriority);
-    }
-
-    writePriority = () => {
-        console.log(this.itemPriority);
     }
 
     setPriority = () => {
@@ -193,27 +181,26 @@ class LowItem extends Item {
 // const myMediumItem = new MediumItem("Medium Item", "Clean the kitchen, bro", "22/07/2023", "medium");
 // const myLowItem = new LowItem("Low Item", "Clean the kitchen, bro", "22/07/2023", "low");
 
-// SUBMIT BUTTON
-    const submitNewItem = (() => {
-        const submitItem = document.getElementById("submitItem");
+const submitNewItem = (() => {
+    const submitItem = document.getElementById("submitItem");
 
-        submitItem.addEventListener("click", (event) => {
-            event.preventDefault();
+    submitItem.addEventListener("click", (event) => {
+        event.preventDefault();
 
-            const titleValue = document.getElementById("newTitle").value;
-            const descriptionValue = document.getElementById("newDescription").value;
-            const priorityValue = document.getElementById("priority").value;
-            const deadlineValue = document.getElementById("deadline").value;
+        const titleValue = document.getElementById("newTitle").value;
+        const descriptionValue = document.getElementById("newDescription").value;
+        const priorityValue = document.getElementById("priority").value;
+        const deadlineValue = document.getElementById("deadline").value;
 
-            if(priorityValue == "low") {
-                const newUserItem = new LowItem(titleValue, descriptionValue, deadlineValue, priorityValue);
-            } else if(priorityValue == "medium") {
-                const newUserItem = new MediumItem(titleValue, descriptionValue, deadlineValue, priorityValue);
-            } else if (priorityValue == "high"){
-                const newUserItem = new HighItem(titleValue, descriptionValue, deadlineValue, priorityValue);
-            }
-        });
-    })();
+        if(priorityValue == "low") {
+            const newUserItem = new LowItem(titleValue, descriptionValue, deadlineValue, priorityValue);
+        } else if(priorityValue == "medium") {
+            const newUserItem = new MediumItem(titleValue, descriptionValue, deadlineValue, priorityValue);
+        } else if (priorityValue == "high"){
+            const newUserItem = new HighItem(titleValue, descriptionValue, deadlineValue, priorityValue);
+        }
+    });
+})();
 
     // RADIO BUTTON TITLE ISSUE
     // Because the radio buttons are based on this.Title, it is possible for a bug to occur if the user sets
