@@ -82,34 +82,34 @@ class Item {
 
             radioInput1.setAttribute("type", "radio");
             radioInput1.setAttribute("class", "btn-check");
-            radioInput1.setAttribute("name", "btnradio");
-            radioInput1.setAttribute("id", `btnradio1`);
+            radioInput1.setAttribute("name", `${this.title}`);
+            radioInput1.setAttribute("id", `${this.title+1}`);
             radioInput1.setAttribute("autocomplete", "off");
             const label1 = document.createElement("label");
             label1.setAttribute("class", "btn btn-outline-success");
-            label1.setAttribute("for", `btnradio1`);
+            label1.setAttribute("for", `${this.title+1}`);
             label1.textContent = "Low";
 
             const radioInput2 = document.createElement("input");
             radioInput2.setAttribute("type", "radio");
             radioInput2.setAttribute("class", "btn-check");
-            radioInput2.setAttribute("name", "btnradio");
-            radioInput2.setAttribute("id", `btnradio2`);
+            radioInput2.setAttribute("name", `${this.title}`);
+            radioInput2.setAttribute("id", `${this.title+2}`);
             radioInput2.setAttribute("autocomplete", "off");
             const label2 = document.createElement("label");
             label2.setAttribute("class", "btn btn-outline-warning");
-            label2.setAttribute("for", `btnradio2`);
+            label2.setAttribute("for", `${this.title+2}`);
             label2.textContent = "Medium";
 
             const radioInput3 = document.createElement("input");
             radioInput3.setAttribute("type", "radio");
             radioInput3.setAttribute("class", "btn-check");
-            radioInput3.setAttribute("name", "btnradio");
-            radioInput3.setAttribute("id", `btnradio3`);
+            radioInput3.setAttribute("name", `${this.title}`);
+            radioInput3.setAttribute("id", `${this.title+3}`);
             radioInput3.setAttribute("autocomplete", "off");
             const label3 = document.createElement("label");
             label3.setAttribute("class", "btn btn-outline-danger");
-            label3.setAttribute("for", `btnradio3`);
+            label3.setAttribute("for", `${this.title+3}`);
             label3.textContent = "High";
 
             priorityBtnGrp.appendChild(radioInput1);
@@ -164,7 +164,9 @@ class MediumItem extends Item {
     }
 
     setPriority = () => {
-        
+        for(let i = 0; i < items.length; i++) {
+
+        }
     }
 }
 
