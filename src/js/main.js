@@ -6,25 +6,6 @@ import * as bootstrap from 'bootstrap'
 
 let items = [];
 
-// const newItem = (() => {
-
-//     const addNewItem = () => {
-//         const newTitle = document.getElementById("newTitle").value;
-//         const newDescription = document.getElementById("newDescription").value;
-//         const newPriority = document.getElementById("priority").value;
-//         const newDeadline = document.getElementById("deadline").value;
-
-//         const newItem = new Item(newTitle, newDescription, newPriority, newDeadline);
-//     }
-
-//     console.log(newItem);
-
-//     return {addNewItem}
-// })();
-
-
-
-
 class Item {
     constructor(title, description, deadline) {
         this.title = title;
@@ -228,8 +209,6 @@ class LowItem extends Item {
             } else {
                 const newUserItem = new HighItem(titleValue, descriptionValue, deadlineValue, priorityValue);
             }
-            
-            // const newUserItem = new Item(titleValue, descriptionValue, deadlineValue, priorityValue);
         });
     })();
 
