@@ -65,58 +65,68 @@ class Item {
             bodyTitleWrapper.appendChild(descriptionElement);
             collapseElement.appendChild(bodyTitleWrapper);
             
-            // Body Priority
+        // Body Priority
             const priorityElement = document.createElement("div");
             priorityElement.setAttribute("id", "priorities");
-            const priorityTitle = document.createElement("div");
-            // priorityTitle.textContent = "Priority:"
-            priorityElement.appendChild(priorityTitle);
-            const priorityBtnGrp = document.createElement("div");
-            priorityBtnGrp.classList.add("btn-group");
-            priorityBtnGrp.setAttribute("role", "group");
-            priorityBtnGrp.setAttribute("aria-label", "Basic radio toggle button group");
-            priorityBtnGrp.setAttribute("id", "priorities-group");
 
-            const radioInput1 = document.createElement("input");
+            // User buttons
+                const iconWrapper = document.createElement("div");
+                iconWrapper.classList.add("icon-wrapper");
+                const editIcon = document.createElement("div");
+                editIcon.classList.add("edit-icon");
+                const deleteIcon = document.createElement("div");
+                deleteIcon.classList.add("delete-icon");
+                iconWrapper.appendChild(editIcon);
+                iconWrapper.appendChild(deleteIcon);
+                priorityElement.appendChild(iconWrapper);
 
-            radioInput1.setAttribute("type", "radio");
-            radioInput1.setAttribute("class", "btn-check");
-            radioInput1.setAttribute("name", `${this.title}`);
-            radioInput1.setAttribute("id", `${this.title+1}`);
-            radioInput1.setAttribute("autocomplete", "off");
-            const label1 = document.createElement("label");
-            label1.setAttribute("class", "btn btn-outline-success");
-            label1.setAttribute("for", `${this.title+1}`);
-            label1.textContent = "Low";
+            // Priority
+                const priorityBtnGrp = document.createElement("div");
+                priorityBtnGrp.classList.add("btn-group");
+                priorityBtnGrp.setAttribute("role", "group");
+                priorityBtnGrp.setAttribute("aria-label", "Basic radio toggle button group");
+                priorityBtnGrp.setAttribute("id", "priorities-group");
 
-            const radioInput2 = document.createElement("input");
-            radioInput2.setAttribute("type", "radio");
-            radioInput2.setAttribute("class", "btn-check");
-            radioInput2.setAttribute("name", `${this.title}`);
-            radioInput2.setAttribute("id", `${this.title+2}`);
-            radioInput2.setAttribute("autocomplete", "off");
-            const label2 = document.createElement("label");
-            label2.setAttribute("class", "btn btn-outline-warning");
-            label2.setAttribute("for", `${this.title+2}`);
-            label2.textContent = "Medium";
+                const radioInput1 = document.createElement("input");
 
-            const radioInput3 = document.createElement("input");
-            radioInput3.setAttribute("type", "radio");
-            radioInput3.setAttribute("class", "btn-check");
-            radioInput3.setAttribute("name", `${this.title}`);
-            radioInput3.setAttribute("id", `${this.title+3}`);
-            radioInput3.setAttribute("autocomplete", "off");
-            const label3 = document.createElement("label");
-            label3.setAttribute("class", "btn btn-outline-danger");
-            label3.setAttribute("for", `${this.title+3}`);
-            label3.textContent = "High";
+                radioInput1.setAttribute("type", "radio");
+                radioInput1.setAttribute("class", "btn-check");
+                radioInput1.setAttribute("name", `${this.title}`);
+                radioInput1.setAttribute("id", `${this.title+1}`);
+                radioInput1.setAttribute("autocomplete", "off");
+                const label1 = document.createElement("label");
+                label1.setAttribute("class", "btn btn-outline-success");
+                label1.setAttribute("for", `${this.title+1}`);
+                label1.textContent = "Low";
 
-            priorityBtnGrp.appendChild(radioInput1);
-            priorityBtnGrp.appendChild(label1);
-            priorityBtnGrp.appendChild(radioInput2);
-            priorityBtnGrp.appendChild(label2);
-            priorityBtnGrp.appendChild(radioInput3);
-            priorityBtnGrp.appendChild(label3);
+                const radioInput2 = document.createElement("input");
+                radioInput2.setAttribute("type", "radio");
+                radioInput2.setAttribute("class", "btn-check");
+                radioInput2.setAttribute("name", `${this.title}`);
+                radioInput2.setAttribute("id", `${this.title+2}`);
+                radioInput2.setAttribute("autocomplete", "off");
+                const label2 = document.createElement("label");
+                label2.setAttribute("class", "btn btn-outline-warning");
+                label2.setAttribute("for", `${this.title+2}`);
+                label2.textContent = "Medium";
+
+                const radioInput3 = document.createElement("input");
+                radioInput3.setAttribute("type", "radio");
+                radioInput3.setAttribute("class", "btn-check");
+                radioInput3.setAttribute("name", `${this.title}`);
+                radioInput3.setAttribute("id", `${this.title+3}`);
+                radioInput3.setAttribute("autocomplete", "off");
+                const label3 = document.createElement("label");
+                label3.setAttribute("class", "btn btn-outline-danger");
+                label3.setAttribute("for", `${this.title+3}`);
+                label3.textContent = "High";
+
+                priorityBtnGrp.appendChild(radioInput1);
+                priorityBtnGrp.appendChild(label1);
+                priorityBtnGrp.appendChild(radioInput2);
+                priorityBtnGrp.appendChild(label2);
+                priorityBtnGrp.appendChild(radioInput3);
+                priorityBtnGrp.appendChild(label3);
 
             priorityElement.appendChild(priorityBtnGrp);
             collapseElement.appendChild(priorityElement);
