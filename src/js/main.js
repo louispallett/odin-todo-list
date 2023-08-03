@@ -71,11 +71,11 @@ class Item {
 
             // User buttons
                 const iconWrapper = document.createElement("div");
-                iconWrapper.classList.add("icon-wrapper");
+                iconWrapper.setAttribute("id", "icon-wrapper");
                 const editIcon = document.createElement("div");
-                editIcon.classList.add("edit-icon");
+                editIcon.setAttribute("id", "edit-icon");
                 const deleteIcon = document.createElement("div");
-                deleteIcon.classList.add("delete-icon");
+                deleteIcon.setAttribute("id", "delete-icon");
                 iconWrapper.appendChild(editIcon);
                 iconWrapper.appendChild(deleteIcon);
                 priorityElement.appendChild(iconWrapper);

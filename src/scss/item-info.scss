@@ -40,7 +40,7 @@
     border-bottom: 2px solid white;
 }
 
-.icon-wrapper {
+#icon-wrapper {
     margin: 0px 5px;
     gap: 5px;
     background-position:center;
@@ -55,10 +55,10 @@
     }
 }
 
-.edit-icon {
+#edit-icon {
     background-image: url("../edit.svg");
 }
 
-.delete-icon {
+#delete-icon {
     background-image: url("../delete.svg");
 }
