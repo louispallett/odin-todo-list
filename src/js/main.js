@@ -56,14 +56,17 @@ class Item {
             const collapseElement = document.createElement("div");
             collapseElement.classList.add("accordion-collapse", "collapse");
             collapseElement.setAttribute("id", `collapse${items.length}`);
-            const bodyTitleWrapper = document.createElement("div");
-            bodyTitleWrapper.classList.add("title-wrapper");
-            const descriptionElement = document.createElement("div");
-            descriptionElement.classList.add("accordion-body");
+            const descriptionWrapper = document.createElement("div");
+            descriptionWrapper.classList.add("accordion-body");
+            descriptionWrapper.setAttribute("id", "description-wrapper")
+            const descriptionElement = document.createElement("input");
+            descriptionElement.classList.add("form-control");
+            descriptionElement.setAttribute("type", "text");
+            descriptionElement.disabled = true;
             descriptionElement.setAttribute("id", "description");
-            descriptionElement.textContent = `${description}`;
-            bodyTitleWrapper.appendChild(descriptionElement);
-            collapseElement.appendChild(bodyTitleWrapper);
+            descriptionElement.value = `${description}`;
+            descriptionWrapper.appendChild(descriptionElement);
+            collapseElement.appendChild(descriptionWrapper);
             
         // Body Priority
             const priorityElement = document.createElement("div");

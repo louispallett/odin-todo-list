@@ -7,6 +7,10 @@ const editItem = (() => {
         // remove 'disabled' tag (editBtn.disabled = false) and possibly
         // change their SCSS (via an ID change?) for the duration of the
         // edit
+
+        const description = document.getElementById("description");
+
+        description.disabled = false;
     })
 }); // Not sure whether we need to call immediately with () here...
 

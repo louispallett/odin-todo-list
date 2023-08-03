@@ -22,32 +22,30 @@
               </button>
             </h2>
             <div id="newItem" class="accordion-collapse collapse">
-              <div class="title-wrapper">
-                <div class="accordion-body" id="newForm">
-                  <form action="#">
-                    <div class="mb-3">
-                      <input type="text" class="form-control" id="newTitle" placeholder="Title" maxlength="20">
-                    </div>
-                    <div class="mb-3">
-                      <textarea class="form-control" id="newDescription" rows="3" placeholder="Notes"></textarea>
-                    </div>
-                    <div class="input-group mb-3">
-                      <label class="input-group-text" for="priority">Priority</label>
-                      <select class="form-select" id="priority">
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                      </select>
-                    </div>
-                    <div class="input-group mb-3">
-                      <label class="input-group-text" for="deadline">Deadline</label>
-                      <input type="date" class="form-control" id="deadline">
-                    </div>
-                    <div id="submit-wrapper">
-                      <button class="btn btn-primary" type="submit" id="submitItem">Submit</button>
-                    </div>
-                  </form>
-                </div>
+              <div class="accordion-body" id="newForm">
+                <form action="#">
+                  <div class="mb-3">
+                    <input type="text" class="form-control" id="newTitle" placeholder="Title" maxlength="20">
+                  </div>
+                  <div class="mb-3">
+                    <textarea class="form-control" id="newDescription" rows="3" placeholder="Notes"></textarea>
+                  </div>
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="priority">Priority</label>
+                    <select class="form-select" id="priority">
+                      <option value="low">Low</option>
+                      <option value="medium">Medium</option>
+                      <option value="high">High</option>
+                    </select>
+                  </div>
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="deadline">Deadline</label>
+                    <input type="date" class="form-control" id="deadline">
+                  </div>
+                  <div id="submit-wrapper">
+                    <button class="btn btn-primary" type="submit" id="submitItem">Submit</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -61,8 +59,8 @@
               </button>
             </h2>
             <div class="accordion-collapse collapse" id="collapseOne">
-              <div class="title-wrapper">
-                <div class="accordion-body" id="description">Description</div>
+              <div class="accordion-body" id="description-wrapper">
+                  <input type="text" class="form-control" value="Here are some notes" disabled id="description">
               </div>
               <div id="priorities">
                 <div class="icon-wrapper">
