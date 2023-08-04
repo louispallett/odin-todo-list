@@ -17,11 +17,15 @@ const editItem = (() => {
 const deleteItem = (() => {
     const deleteBtn = document.getElementById("delete-icon");
 
-    deleteBtn.addEventListener("click", () => { // 'this' may have to go in the ()
-        // Code which allows the user to delete an item:
-        // The easiest way is that this just removed the item from items[], 
-        // but this will involve refractoring the code so that the submit 
-        // button only adds it to the array, and then the array puts in on the
-        // page - this is how we did Odin-Library, so have a look there!
-    })
+    // deleteBtn.addEventListener("click", () => { // 'this' may have to go in the ()
+    //     // Code which allows the user to delete an item:
+    //     // The easiest way is that this just removed the item from items[], 
+    //     // but this will involve refractoring the code so that the submit 
+    //     // button only adds it to the array, and then the array puts in on the
+    //     // page - this is how we did Odin-Library, so have a look there!
+    // })
+
+    // const removeItem = (accordionNode) => {
+    //     accordionNode.remove();
+    // }
 })
