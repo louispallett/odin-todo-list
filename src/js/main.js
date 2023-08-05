@@ -6,10 +6,6 @@ import * as bootstrap from 'bootstrap'
 
 import {HighItem, MediumItem, LowItem} from "./classes";
 
-// const myHighItem = new HighItem("High Item", "Clean the kitchen, bro", "22/07/2023", "high");
-// const myMediumItem = new MediumItem("Medium Item", "Clean the kitchen, bro", "22/07/2023", "medium");
-// const myLowItem = new LowItem("Low Item", "Clean the kitchen, bro", "22/07/2023", "low");
-
 const submitNewItem = (() => {
     const submitItem = document.getElementById("submitItem");
 
@@ -21,17 +17,20 @@ const submitNewItem = (() => {
         const priorityValue = document.getElementById("priority").value;
         const deadlineValue = document.getElementById("deadline").value;
 
-
-        switch (priorityValue) {
-            case "low":
-            new LowItem(titleValue, descriptionValue, deadlineValue, priorityValue);
-            break;
-            case "medium":
-            new MediumItem(titleValue, descriptionValue, deadlineValue, priorityValue);
-            break;
-            case "high":
-            new HighItem(titleValue, descriptionValue, deadlineValue, priorityValue);
-            break;
+        if(titleValue == "" || deadlineValue == "") {
+            alert("Title and Deadline required");
+        } else {
+            switch (priorityValue) {
+                case "low":
+                new LowItem(titleValue, descriptionValue, deadlineValue, priorityValue);
+                break;
+                case "medium":
+                new MediumItem(titleValue, descriptionValue, deadlineValue, priorityValue);
+                break;
+                case "high":
+                new HighItem(titleValue, descriptionValue, deadlineValue, priorityValue);
+                break;
+            }
         }
     });
 })();
@@ -42,3 +41,6 @@ const submitNewItem = (() => {
     // the same. A possible fix is that when each instance of a class is created, a unique number is created
     // (a random, say 6 digit number), and that is used instead of this.title. The chances of two being the 
     // same are therefore much less likely (and not caused by the user).
+
+    // EDIT BUTTON ISSUE
+    // You can currently only edit items once. This is due to the eventListeners, but it will need to be fixed...

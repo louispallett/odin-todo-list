@@ -3,8 +3,8 @@
 }
 
 .accordion-body {
-    color: black;
     font-size: 1rem;
+    background-color: #3b439b;
 }
 
 #description-wrapper,
@@ -14,18 +14,14 @@
 }
 
 #description-unlocked {
-    background-color: aliceblue;
+    background-color: #3b439b;
     border: none;
-    color: black;
+    color: white;
 }
 
 .title {
     font-weight: bold;
     font-size: 1.1rem;
-}
-
-#priorities-group {
-    // background-color: rgb(34, 34, 34);
 }
 
 #priorities {

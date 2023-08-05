@@ -58,7 +58,7 @@ Item.prototype.pushItem = function() {
     descriptionWrapper.setAttribute("id", "description-wrapper")
     const descriptionElement = document.createElement("textarea");
     descriptionElement.classList.add("form-control");
-    descriptionElement.setAttribute("rows", "4");
+    descriptionElement.setAttribute("rows", "2");
     descriptionElement.disabled = true;
     descriptionElement.setAttribute("id", "description-locked");
     descriptionElement.value = `${this.description}`;

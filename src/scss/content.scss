@@ -11,9 +11,10 @@ $new-colour: rgb(56, 177, 56);
     margin: auto;
     width: clamp(300px, 700px, 1000px);
     font-size: 1.5rem;
+    min-height: 300px;
     max-width: 100%;
     & > div {
-        background-color: $content-box;
+        // background-color: $content-box;
         // background-image: url(../content-background.jpg);
         // background-position: center;
         min-height: 600px;
@@ -36,8 +37,15 @@ $new-colour: rgb(56, 177, 56);
     gap: 20px;
 }
 
-#new-holder > div:first-child {
+#new-holder {
     font-family: "custom-font";
+    & > div > div:first-child {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    & > div > div:nth-child(2) {
+        font-size: .7rem;
+    }
 }
 
 .main-icon {

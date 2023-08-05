@@ -1,6 +1,7 @@
 @use "item-info";
 @use "content";
 @use "form";
+@use "_buttons";
 @import "bootstrap/scss/bootstrap";
 
 @font-face {
@@ -12,6 +13,7 @@
 body {
     // background-color:#fafafa;
     font-family: Segoe UI, sans-serif;
+    background-image: url("../background.jpg");
 }
 
 body, html {
@@ -20,5 +22,19 @@ body, html {
 }
 
 * {
-    box-sizing:border-box;
+    box-sizing:border-box; 
+    color: white;
+}
+
+.input-group-text,
+button {
+    font-weight: bold !important;
+    background-color: #303461 !important;
+    border: 1px solid #303461 !important;
+}
+
+input,
+textarea,
+select {
+    color: white !important;
 }
