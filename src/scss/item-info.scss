@@ -8,9 +8,15 @@
 }
 
 #description-wrapper,
-#description {
+#description-locked {
     background: none;
     border: none;
+}
+
+#description-unlocked {
+    background-color: aliceblue;
+    border: none;
+    color: black;
 }
 
 .title {

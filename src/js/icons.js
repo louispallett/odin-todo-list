@@ -1,17 +1,18 @@
+export {editItem}
+
 const editItem = (() => {
-    const editBtn = document.getElementById("edit-icon");
+    console.log("Hello, World!");
+    // editBtn.addEventListener("click", () => {
+    //     // Code which allows user to edit:
+    //     // Title, date, and notes can be textfields, so this will just
+    //     // remove 'disabled' tag (editBtn.disabled = false) and possibly
+    //     // change their SCSS (via an ID change?) for the duration of the
+    //     // edit
 
-    editBtn.addEventListener("click", () => {
-        // Code which allows user to edit:
-        // Title, date, and notes can be textfields, so this will just
-        // remove 'disabled' tag (editBtn.disabled = false) and possibly
-        // change their SCSS (via an ID change?) for the duration of the
-        // edit
+    //     const description = document.getElementById("description");
 
-        const description = document.getElementById("description");
-
-        description.disabled = false;
-    })
+    //     description.disabled = false;
+    // });
 }); // Not sure whether we need to call immediately with () here...
 
 const deleteItem = (() => {
