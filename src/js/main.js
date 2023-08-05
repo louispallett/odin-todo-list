@@ -32,6 +32,8 @@ const submitNewItem = (() => {
                 break;
             }
         }
+
+        // Need to remove user data (i.e. title, description) from the form
     });
 })();
 
