@@ -29,10 +29,11 @@ $new-colour: rgb(56, 177, 56);
 
 #new-holder {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     font-weight: bold;
     padding-bottom: 10px;
+    gap: 20px;
 }
 
 #new-holder > div:first-child {
@@ -41,5 +42,5 @@ $new-colour: rgb(56, 177, 56);
 
 .main-icon {
     padding: 20px;
-    background-image: url(../new-icon.svg);
+    background-image: url(../notepad.svg);
 }
