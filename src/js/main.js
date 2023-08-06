@@ -7,9 +7,9 @@ import * as bootstrap from 'bootstrap'
 import {HighItem, MediumItem, LowItem} from "./classes";
 
 const submitNewItem = (() => {
-    const submitItem = document.getElementById("submitItem");
+    const submitBtn = document.getElementById("submitItem");
 
-    submitItem.addEventListener("click", (event) => {
+    submitBtn.addEventListener("click", (event) => {
         event.preventDefault();
 
         const titleValue = document.getElementById("newTitle").value;
@@ -31,9 +31,14 @@ const submitNewItem = (() => {
                 new HighItem(titleValue, descriptionValue, deadlineValue, priorityValue);
                 break;
             }
+
+            document.getElementById("newTitle").value = "";
+            document.getElementById("newDescription").value = "";
+            document.getElementById("priority").value = "low";
+            document.getElementById("deadline").value = "";
         }
 
-        // Need to remove user data (i.e. title, description) from the form
+
     });
 })();
 
@@ -43,6 +48,3 @@ const submitNewItem = (() => {
     // the same. A possible fix is that when each instance of a class is created, a unique number is created
     // (a random, say 6 digit number), and that is used instead of this.title. The chances of two being the 
     // same are therefore much less likely (and not caused by the user).
-
-    // EDIT BUTTON ISSUE
-    // You can currently only edit items once. This is due to the eventListeners, but it will need to be fixed...

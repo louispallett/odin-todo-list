@@ -75,16 +75,17 @@ Item.prototype.pushItem = function() {
     const editIcon = document.createElement("div");
     editIcon.setAttribute("id", "edit-icon");
     editIcon.addEventListener("click", () => {
-        // // descriptionElement.removeAttribute("id", "description-locked");
-        // descriptionElement.setAttribute("id", "description-unlocked");
-        // descriptionElement.disabled = false;
-        // // Doing it this way only works once...
-        // editIcon.addEventListener("click", () => {
-        //     descriptionElement.disabled = true;
-        //     descriptionElement.setAttribute("id", "description-locked");
-        // });
-        editItem(editIcon, descriptionElement);
+        if (descriptionElement.disabled) {
+            // Enable editing
+            descriptionElement.disabled = false;
+            descriptionElement.setAttribute("id", "description-unlocked");
+        } else {
+            // Save changes and disable editing
+            descriptionElement.disabled = true;
+            descriptionElement.setAttribute("id", "description-locked");
+        }
     });
+    
     const deleteIcon = document.createElement("div");
     deleteIcon.setAttribute("id", "delete-icon");
     deleteIcon.addEventListener("click", () => {
@@ -191,14 +192,4 @@ class LowItem extends Item {
         const priorityBtn = document.getElementById(this.title+1);
         priorityBtn.checked = true;
     }
-}
-
-function editItem(edit, description) {
-    description.setAttribute("id", "description-unlocked");
-    description.disabled = false;
-    edit.addEventListener("click", () => {
-        description.disabled = true;
-        description.setAttribute("id", "description-locked");
-    });
-    edit.onclick = editItem();
 }
