@@ -4,7 +4,7 @@ import '../scss/styles.scss'
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap' 
 
-import {HighItem, MediumItem, LowItem} from "./classes";
+import {Item, HighItem, MediumItem, LowItem} from "./classes";
 
 const submitNewItem = (() => {
     const submitBtn = document.getElementById("submitItem");
@@ -37,8 +37,12 @@ const submitNewItem = (() => {
             document.getElementById("priority").value = "low";
             document.getElementById("deadline").value = "";
         }
-
-
+    });
+    window.addEventListener("load", () => {
+        const items = Item.loadFromLocalStorage();
+        for (const item of items) {
+            item.pushItem(); // Push the item to the 'items' array in classes.js
+        }
     });
 })();
 
