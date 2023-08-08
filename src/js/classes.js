@@ -1,4 +1,4 @@
-export {Item, HighItem, MediumItem, LowItem};
+export {HighItem, MediumItem, LowItem};
 
 let items = [];
 
@@ -14,38 +14,6 @@ class Item {
 
     addItem = () => {
         items.push(this);
-        this.saveToLocalStorage();
-    }
-
-    saveToLocalStorage = () => {
-        const itemsData = JSON.parse(localStorage.getItem("items")) || [];
-        itemsData.push({
-            title: this.title,
-            description: this.description,
-            deadline: this.deadline
-        });
-        localStorage.setItem("items", JSON.stringify(itemsData));
-    }
-
-    static loadFromLocalStorage = () => {
-        const itemsData = JSON.parse(localStorage.getItem("items")) || [];
-        const items = [];
-
-        for (const itemData of itemsData) {
-            switch (itemData.priority) {
-                case "low":
-                    items.push(new LowItem(itemData.title, itemData.description, itemData.deadline, itemData.priority));
-                    break;
-                case "medium":
-                    items.push(new MediumItem(itemData.title, itemData.description, itemData.deadline, itemData.priority));
-                    break;
-                case "high":
-                    items.push(new HighItem(itemData.title, itemData.description, itemData.deadline, itemData.priority));
-                    break;
-            }
-        }
-
-        return items;
     }
 }
 
