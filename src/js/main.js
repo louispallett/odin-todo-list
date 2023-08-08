@@ -5,6 +5,7 @@ import '../scss/styles.scss'
 import * as bootstrap from 'bootstrap' 
 
 import {HighItem, MediumItem, LowItem} from "./classes";
+import {addToStorage} from "./storage";
 
 const submitNewItem = (() => {
     const submitBtn = document.getElementById("submitItem");
@@ -16,6 +17,8 @@ const submitNewItem = (() => {
         const descriptionValue = document.getElementById("newDescription").value;
         const priorityValue = document.getElementById("priority").value;
         const deadlineValue = document.getElementById("deadline").value;
+
+        addToStorage(titleValue, descriptionValue, priorityValue, deadlineValue);
 
         if(titleValue == "" || deadlineValue == "") {
             alert("Title and Deadline required");
