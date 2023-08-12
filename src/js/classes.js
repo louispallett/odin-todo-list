@@ -18,7 +18,7 @@ class Item {
 }
 
 Item.prototype.pushItem = function() {
-    const accordionContainer = document.getElementById("accordionExample");
+    const accordionContainer = document.getElementById("accordion-wrapper");
 
     // New Accordion Item (whole wrapper)
     const accordionItem = document.createElement("div");
