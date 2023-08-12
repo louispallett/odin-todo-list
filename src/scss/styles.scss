@@ -1,6 +1,7 @@
 @use "item-info";
 @use "content";
 @use "form";
+@use "menu";
 @import "bootstrap/scss/bootstrap";
 
 @font-face {
@@ -11,6 +12,9 @@
 
 body {
     font-family: Segoe UI, sans-serif;
+}
+
+#nightlife-set {
     background-image: url("../background.jpg");
 }
 

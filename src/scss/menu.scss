@@ -1,0 +1,40 @@
+#menu {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+#menu-close {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#menu-header {
+    display: flex;
+    gap: 10px;
+}
+
+#menu-header-text > div {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-family: "custom-font";
+    &:first-child {
+        font-size: 1.5rem;
+    }
+    &:nth-child(2) {
+        font-size: .7rem;
+    }
+}
+
+#mode-icons > div {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-bottom: 10px;
+    align-items: center;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

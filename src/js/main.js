@@ -6,6 +6,7 @@ import * as bootstrap from 'bootstrap'
 
 import {HighItem, MediumItem, LowItem} from "./classes";
 import {addToStorage} from "./storage";
+import {setDarkTheme, setNightlifeTheme} from "./themes";
 
 const submitNewItem = (() => {
     const submitBtn = document.getElementById("submitItem");
@@ -40,6 +41,18 @@ const submitNewItem = (() => {
             document.getElementById("priority").value = "low";
             document.getElementById("deadline").value = "";
         }
+    });
+})();
+
+const setThemes = (() => {
+    const darkThemeBtn = document.getElementById("dark-mode");
+    darkThemeBtn.addEventListener("click", () => {
+        setDarkTheme();
+    });
+
+    const nightlifeThemeBtn = document.getElementById("nightlife-mode");
+    nightlifeThemeBtn.addEventListener("click", () => {
+        setNightlifeTheme();
     });
 })();
 
