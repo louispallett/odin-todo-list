@@ -1,4 +1,4 @@
-import { addToStorage } from "./storage";
+import { addToStorage, removeFromStorage } from "./storage";
 export { HighItem, MediumItem, LowItem };
 
 let items = [];
@@ -101,7 +101,9 @@ Item.prototype.pushItem = function() {
     deleteIcon.addEventListener("click", () => {
         accordionItem.remove();
         const index = items.indexOf(this);
-        items.splice(index, 1);        
+        items.splice(index, 1); 
+        // removeFromStorage(this.itemCount);
+        // localStorage.removeItem(this.itemCount);
     });
     iconWrapper.appendChild(editIcon);
     iconWrapper.appendChild(deleteIcon);

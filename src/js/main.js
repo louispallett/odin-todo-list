@@ -5,7 +5,10 @@ import { HighItem, MediumItem, LowItem } from "./classes";
 import { setDarkTheme, setNightlifeTheme } from "./themes";
 import { addItemCount } from './storage';
 
-let itemCount = 1;
+let itemCount = localStorage.getItem("itemCount");
+if(itemCount === null) {
+    itemCount = 1;
+}
 
 const submitNewItem = (() => {
     const submitBtn = document.getElementById("submitItem");
