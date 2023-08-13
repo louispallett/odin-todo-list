@@ -30,7 +30,6 @@
     gap: 5px;
     align-items: center;
     font-size: 1rem;
-    // background-color: rgb(227, 245, 255);
     font-weight: bold;
     padding: 10px 5px;
 }
@@ -45,24 +44,14 @@
 }
 
 #icon-wrapper {
-    margin: 0px 10px;
-    gap: 10px;
     background-position:center;
     display: flex;
     & > div {
         padding: 10px;
     }
     & > div:hover {
-        // background-color: rgb(230, 245, 253);
-        // border-radius: 100%;
+        background-color: rgb(154, 154, 154);
+        border-radius: 100%;
         cursor: pointer;
     }
-}
-
-#edit-icon {
-    background-image: url("../edit.svg");
-}
-
-#delete-icon {
-    background-image: url("../delete.svg");
 }

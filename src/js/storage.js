@@ -1,5 +1,5 @@
 import { HighItem, MediumItem, LowItem } from "./classes";
-export { addToStorage, addItemCount, getLocalStorage }
+export { addToStorage, addItemCount }
 
 const addToStorage = ((item) => {
     localStorage.setItem(item.itemCount, JSON.stringify(item));
@@ -12,8 +12,6 @@ const addItemCount = ((itemCount) => {
 const getLocalStorage =(() => {
     window.addEventListener("load", () => {
         for(let i = 1; i < localStorage.length; i++) {
-            // console.log(localStorage[i]);
-            // localStorage.getItem(i);
             const newItem = JSON.parse(localStorage.getItem(i));
 
             switch (newItem.itemPriority) {
