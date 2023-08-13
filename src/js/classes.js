@@ -1,5 +1,5 @@
-import {addToStorage} from "./storage";
-export {HighItem, MediumItem, LowItem};
+import { addToStorage } from "./storage";
+export { HighItem, MediumItem, LowItem };
 
 let items = [];
 
@@ -11,6 +11,7 @@ class Item {
 
         this.addItem();
         this.pushItem(title, description, deadline);
+        // this.storeTitle(title);
     }
 
     addItem = () => {
@@ -154,9 +155,10 @@ Item.prototype.pushItem = function() {
 }
 
 class HighItem extends Item {
-    constructor(title, description, deadline, itemPriority) {
+    constructor(title, description, deadline, itemPriority, itemCount) {
         super(title, description, deadline);
         this.itemPriority = itemPriority;
+        this.itemCount = itemCount;
 
         this.setPriority(itemPriority);
         this.addItemToStorage();
@@ -173,9 +175,10 @@ class HighItem extends Item {
 }
 
 class MediumItem extends Item {
-    constructor(title, description, deadline, itemPriority) {
+    constructor(title, description, deadline, itemPriority, itemCount) {
         super(title, description, deadline);
         this.itemPriority = itemPriority;
+        this.itemCount = itemCount;
 
         this.setPriority(itemPriority);
         this.addItemToStorage();
@@ -192,9 +195,10 @@ class MediumItem extends Item {
 }
 
 class LowItem extends Item {
-    constructor(title, description, deadline, itemPriority) {
+    constructor(title, description, deadline, itemPriority, itemCount) {
         super(title, description, deadline);
         this.itemPriority = itemPriority;
+        this.itemCount = itemCount;
 
         this.setPriority(itemPriority);
         this.addItemToStorage();

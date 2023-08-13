@@ -1,8 +1,11 @@
 import '../scss/styles.scss'
 import * as bootstrap from 'bootstrap' 
 
-import {HighItem, MediumItem, LowItem} from "./classes";
-import {setDarkTheme, setNightlifeTheme} from "./themes";
+import { HighItem, MediumItem, LowItem } from "./classes";
+import { setDarkTheme, setNightlifeTheme } from "./themes";
+import { addItemCount } from './storage';
+
+let itemCount = 1;
 
 const submitNewItem = (() => {
     const submitBtn = document.getElementById("submitItem");
@@ -20,13 +23,13 @@ const submitNewItem = (() => {
         } else {
             switch (priorityValue) {
                 case "low":
-                new LowItem(titleValue, descriptionValue, deadlineValue, priorityValue);
+                new LowItem(titleValue, descriptionValue, deadlineValue, priorityValue, itemCount);
                 break;
                 case "medium":
-                new MediumItem(titleValue, descriptionValue, deadlineValue, priorityValue);
+                new MediumItem(titleValue, descriptionValue, deadlineValue, priorityValue, itemCount);
                 break;
                 case "high":
-                new HighItem(titleValue, descriptionValue, deadlineValue, priorityValue);
+                new HighItem(titleValue, descriptionValue, deadlineValue, priorityValue, itemCount);
                 break;
             }
 
@@ -34,6 +37,9 @@ const submitNewItem = (() => {
             document.getElementById("newDescription").value = "";
             document.getElementById("priority").value = "low";
             document.getElementById("deadline").value = "";
+
+            addItemCount(itemCount);
+            itemCount++;
         }
     });
 })();

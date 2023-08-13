@@ -1,11 +1,32 @@
-export {addToStorage, getLocalStorage}
+import { HighItem, MediumItem, LowItem } from "./classes";
+export { addToStorage, addItemCount, getLocalStorage }
 
 const addToStorage = ((item) => {
-    localStorage.setItem(item.title, JSON.stringify(item));
+    localStorage.setItem(item.itemCount, JSON.stringify(item));
 });
 
-const getLocalStorage =((item) => {
+const addItemCount = ((itemCount) => {
+    localStorage.setItem("itemCount", itemCount);
+});
+
+const getLocalStorage =(() => {
     window.addEventListener("load", () => {
-        
+        for(let i = 1; i < localStorage.length; i++) {
+            // console.log(localStorage[i]);
+            // localStorage.getItem(i);
+            const newItem = JSON.parse(localStorage.getItem(i));
+
+            switch (newItem.itemPriority) {
+                case "low":
+                new LowItem(newItem.title, newItem.description, newItem.deadline, newItem.itemPriority, newItem.itemCount);
+                break;
+                case "medium":
+                new MediumItem(newItem.title, newItem.description, newItem.deadline, newItem.itemPriority, newItem.itemCount);
+                break;
+                case "high":
+                new HighItem(newItem.title, newItem.description, newItem.deadline, newItem.itemPriority, newItem.itemCount);
+                break;
+            }
+        }
     });
 })();
