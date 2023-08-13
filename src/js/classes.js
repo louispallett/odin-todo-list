@@ -1,3 +1,4 @@
+import {addToStorage} from "./storage";
 export {HighItem, MediumItem, LowItem};
 
 let items = [];
@@ -158,11 +159,16 @@ class HighItem extends Item {
         this.itemPriority = itemPriority;
 
         this.setPriority(itemPriority);
+        this.addItemToStorage();
     }
 
     setPriority = () => {
         const priorityBtn = document.getElementById(this.title+3);
         priorityBtn.checked = true;
+    }
+
+    addItemToStorage = () => {
+        addToStorage(this);
     }
 }
 
@@ -172,11 +178,16 @@ class MediumItem extends Item {
         this.itemPriority = itemPriority;
 
         this.setPriority(itemPriority);
+        this.addItemToStorage();
     }
 
     setPriority = () => {
         const priorityBtn = document.getElementById(this.title+2);
         priorityBtn.checked = true;
+    }
+
+    addItemToStorage = () => {
+        addToStorage(this);
     }
 }
 
@@ -186,10 +197,15 @@ class LowItem extends Item {
         this.itemPriority = itemPriority;
 
         this.setPriority(itemPriority);
+        this.addItemToStorage();
     }
 
     setPriority = () => {
         const priorityBtn = document.getElementById(this.title+1);
         priorityBtn.checked = true;
+    }
+
+    addItemToStorage = () => {
+        addToStorage(this);
     }
 }

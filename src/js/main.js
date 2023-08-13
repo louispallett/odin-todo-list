@@ -1,11 +1,7 @@
-// Import our custom CSS
 import '../scss/styles.scss'
-
-// Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap' 
 
 import {HighItem, MediumItem, LowItem} from "./classes";
-import {addToStorage} from "./storage";
 import {setDarkTheme, setNightlifeTheme} from "./themes";
 
 const submitNewItem = (() => {
@@ -18,8 +14,6 @@ const submitNewItem = (() => {
         const descriptionValue = document.getElementById("newDescription").value;
         const priorityValue = document.getElementById("priority").value;
         const deadlineValue = document.getElementById("deadline").value;
-
-        addToStorage(titleValue, descriptionValue, priorityValue, deadlineValue);
 
         if(titleValue == "" || deadlineValue == "") {
             alert("Title and Deadline required");
