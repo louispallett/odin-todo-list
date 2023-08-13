@@ -726,7 +726,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scs
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addToStorage: () => (/* binding */ addToStorage)\n/* harmony export */ });\n\n\nconst addToStorage = ((item) => {\n    localStorage.setItem(item.title, JSON.stringify(item));\n});\n\n//# sourceURL=webpack://odin-todo-list/./src/js/storage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addToStorage: () => (/* binding */ addToStorage),\n/* harmony export */   getLocalStorage: () => (/* binding */ getLocalStorage)\n/* harmony export */ });\n\n\nconst addToStorage = ((item) => {\n    localStorage.setItem(item.title, JSON.stringify(item));\n});\n\nconst getLocalStorage =((item) => {\n    window.addEventListener(\"load\", () => {\n        \n    });\n})();\n\n//# sourceURL=webpack://odin-todo-list/./src/js/storage.js?");
 
 /***/ }),
 
