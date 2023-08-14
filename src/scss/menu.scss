@@ -11,30 +11,64 @@
 
 #menu-header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px;
 }
 
-#menu-header-text > div {
+#menu-header-text {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     font-weight: bold;
     font-family: "custom-font";
-    &:first-child {
+    padding-left: 15px;
+    & div:first-child {
         font-size: 1.5rem;
     }
-    &:nth-child(2) {
+    & div:nth-child(2) {
         font-size: .7rem;
     }
+}
+
+#menu-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 auto;
+    justify-content: space-between;
 }
 
 #mode-icons > div {
     display: flex;
     justify-content: flex-start;
     gap: 20px;
-    padding-bottom: 10px;
+    padding: 10px;
     align-items: center;
-
+    font-weight: bold;
     &:hover {
         cursor: pointer;
     }
+}
+
+#creator-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
+    margin-bottom: 20px;
+    font-family: "custom-font";
+    width: auto;
+    font-weight: bold;
+    & > a:hover {
+        cursor: pointer;
+        background-color: rgb(154, 154, 154);
+        border-radius: 100%;
+    }
+}
+
+#dark-mode:hover,
+#nightlife-mode:hover {
+    background-color: rgb(154, 154, 154);
+    border-radius: 10px;
 }
