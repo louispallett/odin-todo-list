@@ -1,7 +1,8 @@
 import { addToStorage, removeFromStorage } from "./storage";
-export { HighItem, MediumItem, LowItem };
+export { HighItem, MediumItem, LowItem, titles };
 
 let items = [];
+let titles = [];
 
 class Item {
     constructor(title, description, deadline) {
@@ -11,10 +12,15 @@ class Item {
 
         this.addItem();
         this.pushItem(title, description, deadline);
+        this.addTitle();
     }
 
     addItem = () => {
         items.push(this);
+    }
+
+    addTitle = () => {
+        titles.push(this.title);
     }
 }
 
@@ -180,7 +186,7 @@ class HighItem extends Item {
     }
 
     addItemToStorage = () => {
-        addToStorage(this);
+        addToStorage(this.title, this);
     }
 }
 
@@ -200,7 +206,7 @@ class MediumItem extends Item {
     }
 
     addItemToStorage = () => {
-        addToStorage(this);
+        addToStorage(this.title, this);
     }
 }
 
@@ -220,6 +226,6 @@ class LowItem extends Item {
     }
 
     addItemToStorage = () => {
-        addToStorage(this);
+        addToStorage(this.title, this);
     }
 }

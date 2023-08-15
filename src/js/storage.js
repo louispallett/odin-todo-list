@@ -1,12 +1,19 @@
-import { HighItem, MediumItem, LowItem } from "./classes";
+import { HighItem, MediumItem, LowItem, titles } from "./classes";
 export { addToStorage, addItemCount, removeFromStorage }
 
-const addToStorage = ((item) => {
-    localStorage.setItem(item.itemCount, JSON.stringify(item));
+const addToStorage = ((title, item) => {
+    localStorage.setItem(JSON.stringify(title), JSON.stringify(item));
 });
 
+// This can be removed as it's being replaced with addTitle()
 const addItemCount = ((itemCount) => {
     localStorage.setItem("itemCount", itemCount);
+});
+
+const addTitle = (() => {
+    titles.forEach(title => {
+        localStorage.setItem(title)
+    });
 });
 
 // BUG: currently (when function below is active), items, if removed in decending order, are removed
@@ -42,3 +49,18 @@ const getLocalStorage =(() => {
         }
     });
 })();
+
+/* On storage branch -
+We've added it to the storage via it's title - this is coming through and the title is being named as a string.
+This is through the function addToStorage().
+
+However, we now need to add each title to an array - this can be done via the addTitle() function.
+
+We can remove addItemCount(), as it will be made redundant.
+
+Then, in getLocalStorage(), instead of looping through i, we need to loop through each title in the titles[] array,
+which can be done via the forEach loop.
+
+Hopefully, this should render through the titles in the storage... it may be ideal to just add titles to the titles[] 
+array in this file (maybe in addToStorage()?), just because then we aren't exporting the array here - makes everything
+a little cleaner.*/
