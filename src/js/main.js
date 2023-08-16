@@ -3,12 +3,6 @@ import * as bootstrap from 'bootstrap'
 
 import { HighItem, MediumItem, LowItem } from "./classes";
 import { setDarkTheme, setNightlifeTheme } from "./themes";
-import { addItemCount } from './storage';
-
-let itemCount = localStorage.getItem("itemCount");
-if(itemCount === null) {
-    itemCount = 1;
-}
 
 const submitNewItem = (() => {
     const submitBtn = document.getElementById("submitItem");
@@ -26,23 +20,20 @@ const submitNewItem = (() => {
         } else {
             switch (priorityValue) {
                 case "low":
-                new LowItem(titleValue, descriptionValue, deadlineValue, priorityValue, itemCount);
+                new LowItem(titleValue, descriptionValue, deadlineValue, priorityValue);
                 break;
                 case "medium":
-                new MediumItem(titleValue, descriptionValue, deadlineValue, priorityValue, itemCount);
+                new MediumItem(titleValue, descriptionValue, deadlineValue, priorityValue);
                 break;
                 case "high":
-                new HighItem(titleValue, descriptionValue, deadlineValue, priorityValue, itemCount);
+                new HighItem(titleValue, descriptionValue, deadlineValue, priorityValue);
                 break;
             }
 
             document.getElementById("newTitle").value = "";
             document.getElementById("newDescription").value = "";
             document.getElementById("priority").value = "low";
-            document.getElementById("deadline").value = "";
-
-            addItemCount(itemCount);
-            itemCount++;
+            document.getElementById("deadline").value = "";;
         }
     });
 })();

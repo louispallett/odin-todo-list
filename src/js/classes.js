@@ -1,8 +1,7 @@
-import { addToStorage, removeFromStorage } from "./storage";
-export { HighItem, MediumItem, LowItem, titles };
+import { addToStorage, removeFromStorage, addTitle } from "./storage";
+export { HighItem, MediumItem, LowItem };
 
 let items = [];
-let titles = [];
 
 class Item {
     constructor(title, description, deadline) {
@@ -12,15 +11,11 @@ class Item {
 
         this.addItem();
         this.pushItem(title, description, deadline);
-        this.addTitle();
+        addTitle(this.title);
     }
 
     addItem = () => {
         items.push(this);
-    }
-
-    addTitle = () => {
-        titles.push(this.title);
     }
 }
 
@@ -108,8 +103,6 @@ Item.prototype.pushItem = function() {
         accordionItem.remove();
         const index = items.indexOf(this);
         items.splice(index, 1); 
-        // removeFromStorage(this.itemCount);
-        // localStorage.removeItem(this.itemCount);
     });
     iconWrapper.appendChild(editIcon);
     iconWrapper.appendChild(deleteIcon);
@@ -171,10 +164,9 @@ Item.prototype.pushItem = function() {
 }
 
 class HighItem extends Item {
-    constructor(title, description, deadline, itemPriority, itemCount) {
+    constructor(title, description, deadline, itemPriority) {
         super(title, description, deadline);
         this.itemPriority = itemPriority;
-        this.itemCount = itemCount;
 
         this.setPriority(itemPriority);
         this.addItemToStorage();
@@ -191,10 +183,9 @@ class HighItem extends Item {
 }
 
 class MediumItem extends Item {
-    constructor(title, description, deadline, itemPriority, itemCount) {
+    constructor(title, description, deadline, itemPriority) {
         super(title, description, deadline);
         this.itemPriority = itemPriority;
-        this.itemCount = itemCount;
 
         this.setPriority(itemPriority);
         this.addItemToStorage();
@@ -211,10 +202,9 @@ class MediumItem extends Item {
 }
 
 class LowItem extends Item {
-    constructor(title, description, deadline, itemPriority, itemCount) {
+    constructor(title, description, deadline, itemPriority) {
         super(title, description, deadline);
         this.itemPriority = itemPriority;
-        this.itemCount = itemCount;
 
         this.setPriority(itemPriority);
         this.addItemToStorage();

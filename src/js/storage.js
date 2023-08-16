@@ -1,19 +1,16 @@
-import { HighItem, MediumItem, LowItem, titles } from "./classes";
-export { addToStorage, addItemCount, removeFromStorage }
+import { HighItem, MediumItem, LowItem } from "./classes";
+export { addToStorage, removeFromStorage, addTitle }
+
+let titles = [];
+
+const addTitle = ((title) => {
+    titles.push(title);
+    console.log(titles);
+    localStorage.setItem("titles", JSON.stringify(titles));
+});
 
 const addToStorage = ((title, item) => {
     localStorage.setItem(JSON.stringify(title), JSON.stringify(item));
-});
-
-// This can be removed as it's being replaced with addTitle()
-const addItemCount = ((itemCount) => {
-    localStorage.setItem("itemCount", itemCount);
-});
-
-const addTitle = (() => {
-    titles.forEach(title => {
-        localStorage.setItem(title)
-    });
 });
 
 // BUG: currently (when function below is active), items, if removed in decending order, are removed
@@ -21,46 +18,29 @@ const addTitle = (() => {
 // thus the wrong items will load (removing items not deleted but including those which have been). 
 // The issue here is that 'itemCount' is being set at it's highest value - a possible fix is to 
 // decrement 'i' in getLocalStorage().
-const removeFromStorage = ((itemCount) => {
-    localStorage.removeItem(itemCount);
+const removeFromStorage = (() => {
+    // localStorage.removeItem(itemCount);
 });
 
 const getLocalStorage =(() => {
     window.addEventListener("load", () => {
-        for(let i = 1; i < localStorage.length; i++) {
-            const newItem = JSON.parse(localStorage.getItem(i));
+        const titles = JSON.parse(localStorage.getItem("titles"));
+        console.log(titles);
+        titles.forEach(title => {
+            const oldTitle = JSON.parse(localStorage.getItem(JSON.stringify(title)));
+            console.log(oldTitle.itemPriority);
+            switch (oldTitle.itemPriority) {
+                case "low":
+                new LowItem(oldTitle.title, oldTitle.description, oldTitle.deadline, oldTitle.itemPriority);
+                break;
+                case "medium":
+                new MediumItem(oldTitle.title, oldTitle.description, oldTitle.deadline, oldTitle.itemPriority);
+                break;
+                case "high":
+                new HighItem(oldTitle.title, oldTitle.description, oldTitle.deadline, oldTitle.itemPriority);
+                break;
+            }       
 
-            if(newItem === null) {
-                i++;
-            } else {
-                switch (newItem.itemPriority) {
-                    case "low":
-                    new LowItem(newItem.title, newItem.description, newItem.deadline, newItem.itemPriority, newItem.itemCount);
-                    break;
-                    case "medium":
-                    new MediumItem(newItem.title, newItem.description, newItem.deadline, newItem.itemPriority, newItem.itemCount);
-                    break;
-                    case "high":
-                    new HighItem(newItem.title, newItem.description, newItem.deadline, newItem.itemPriority, newItem.itemCount);
-                    break;
-                }
-            }
-
-        }
-    });
+        });
+    })
 })();
-
-/* On storage branch -
-We've added it to the storage via it's title - this is coming through and the title is being named as a string.
-This is through the function addToStorage().
-
-However, we now need to add each title to an array - this can be done via the addTitle() function.
-
-We can remove addItemCount(), as it will be made redundant.
-
-Then, in getLocalStorage(), instead of looping through i, we need to loop through each title in the titles[] array,
-which can be done via the forEach loop.
-
-Hopefully, this should render through the titles in the storage... it may be ideal to just add titles to the titles[] 
-array in this file (maybe in addToStorage()?), just because then we aren't exporting the array here - makes everything
-a little cleaner.*/
