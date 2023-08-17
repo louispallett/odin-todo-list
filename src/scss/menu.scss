@@ -62,13 +62,13 @@
     font-weight: bold;
     & > a:hover {
         cursor: pointer;
-        background-color: rgb(154, 154, 154);
+        // background-color: rgb(154, 154, 154);
         border-radius: 100%;
     }
 }
 
 #dark-mode:hover,
 #nightlife-mode:hover {
-    background-color: rgb(154, 154, 154);
+    // background-color: rgb(154, 154, 154);
     border-radius: 10px;
 }
