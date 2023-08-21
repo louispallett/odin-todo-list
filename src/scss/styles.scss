@@ -2,6 +2,7 @@
 @use "content";
 @use "form";
 @use "menu";
+@use "colours";
 @import "bootstrap/scss/bootstrap";
 
 @font-face {
@@ -21,7 +22,6 @@ body, html {
 
 * {
     box-sizing:border-box; 
-    // color: white;
 }
 
 .input-group-text,
@@ -35,12 +35,16 @@ button {
     }
 
     .accordion-button {
-        background-color: #303461;
+        background-color: colours.$dark-button;
     }
 }
 
 [data-bs-theme="light"] {
     body {
         background-image: url("../light-background.jpg");
+    }
+
+    .accordion-button {
+        background-color: colours.$light-button;
     }
 }

@@ -15,3 +15,19 @@
         background-color: colours.$dark-item-background;
     }
 }
+
+[data-bs-theme="light"] {
+    .input-group > label,
+    button[type="submit"] {
+        background-color: colours.$light-button;
+        border: none;
+    }
+
+    button[type="submit"]:hover {
+        background-color: colours.$light-button-hover;
+    }
+
+    .accordion-body {
+        background-color: colours.$light-item-background;
+    }
+}

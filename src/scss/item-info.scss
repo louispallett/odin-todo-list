@@ -1,3 +1,5 @@
+@use "colours";
+
 #date {
     font-style: italic;
 }
@@ -46,25 +48,29 @@
     & > div:hover {
         border-radius: 10px;
         cursor: pointer;
+        background-color: rgb(154, 154, 154);
     }
 }
 
 [data-bs-theme="dark"] {
-    #icon-wrapper > div:hover {
-        background-color: rgb(154, 154, 154);
-    }
-
     #description-unlocked {
-        background-color: #3b439b;
+        background-color: colours.$dark-item-background;
     }
 }
 
 [data-bs-theme="light"] {
-    #icon-wrapper > div:hover {
-        background-color: rgb(154, 154, 154); //change
+    #description-unlocked {
+        background-color: colours.$light-item-background;
     }
 
-    #description-unlocked {
-        background-color: #3b439b; //change
+    #description-wrapper,
+    #priorities {
+        background-color: colours.$light-accordion-body;
+    }
+
+    .title,
+    .input-group-text,
+    #date {
+        color: white;
     }
 }
