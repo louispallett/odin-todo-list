@@ -1,10 +1,3 @@
-// @import "bootstrap/scss/bootstrap";
-
-$content-box: #303461;
-$footer: #222;
-$footer-font: rgb(255, 255, 255);
-$new-colour: rgb(56, 177, 56);
-
 #content-outer {
     display:block;
     padding: 40px;
@@ -14,12 +7,8 @@ $new-colour: rgb(56, 177, 56);
     min-height: 300px;
     max-width: 100%;
     & > div {
-        // background-color: $content-box;
-        // background-image: url(../content-background.jpg);
-        // background-position: center;
         min-height: 600px;
         border-radius: 20px;
-        box-shadow: 10px 10px 40px rgba(0,0,0,0.06);
         padding: 40px;
     }
 }
@@ -35,15 +24,15 @@ $new-colour: rgb(56, 177, 56);
     font-weight: bold;
     padding-bottom: 10px;
     gap: 20px;
-}
-
-#new-holder {
     font-family: "custom-font";
+    & > div {
+        color: rgb(221, 221, 221);
+    }
     & > div > div:first-child {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     & > div > div:nth-child(2) {
-        font-size: .7rem;
+        font-size: 1.2rem;
     }
 }
 

@@ -1,5 +1,33 @@
-.mb-3 > label {
-    background-color: rgb(14, 115, 247); 
-    border: 1px solid rgb(14, 115, 247); 
-    color: white;
+@use "colours";
+
+[data-bs-theme="dark"] {
+    .input-group > label,
+    button[type="submit"] {
+        background-color: colours.$dark-button;
+        border: none;
+    }
+
+    button[type="submit"]:hover {
+        background-color: colours.$dark-button-hover;
+    }
+
+    .accordion-body {
+        background-color: colours.$dark-item-background;
+    }
+}
+
+[data-bs-theme="light"] {
+    .input-group > label,
+    button[type="submit"] {
+        background-color: colours.$light-button;
+        border: none;
+    }
+
+    button[type="submit"]:hover {
+        background-color: colours.$light-button-hover;
+    }
+
+    .accordion-body {
+        background-color: colours.$light-item-background;
+    }
 }

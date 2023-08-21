@@ -2,6 +2,7 @@
 @use "content";
 @use "form";
 @use "menu";
+@use "colours";
 @import "bootstrap/scss/bootstrap";
 
 @font-face {
@@ -14,10 +15,6 @@ body {
     font-family: Segoe UI, sans-serif;
 }
 
-#nightlife-set {
-    background-image: url("../background.jpg");
-}
-
 body, html {
     margin:0;
     padding:0;
@@ -25,18 +22,29 @@ body, html {
 
 * {
     box-sizing:border-box; 
-    color: white;
 }
 
 .input-group-text,
 button {
     font-weight: bold !important;
-    background-color: #303461 !important;
-    border: 1px solid #303461 !important;
 }
 
-input,
-textarea,
-select {
-    color: white !important;
+[data-bs-theme="dark"] {
+    body {
+        background-image: url("../background.jpg");
+    }
+
+    .accordion-button {
+        background-color: colours.$dark-button;
+    }
+}
+
+[data-bs-theme="light"] {
+    body {
+        background-image: url("../light-background.jpg");
+    }
+
+    .accordion-button {
+        background-color: colours.$light-button;
+    }
 }

@@ -1,10 +1,11 @@
+@use "colours";
+
 #date {
     font-style: italic;
 }
 
 .accordion-body {
     font-size: 1rem;
-    background-color: #3b439b;
 }
 
 #description-wrapper,
@@ -14,9 +15,7 @@
 }
 
 #description-unlocked {
-    background-color: #3b439b;
     border: none;
-    color: white;
 }
 
 .title {
@@ -39,10 +38,6 @@
     font-weight: bold;
 }
 
-.item-top {
-    border-bottom: 2px solid white;
-}
-
 #icon-wrapper {
     background-position:center;
     display: flex;
@@ -52,7 +47,30 @@
     }
     & > div:hover {
         border-radius: 10px;
-        background-color: rgb(154, 154, 154);
         cursor: pointer;
+        background-color: rgb(154, 154, 154);
+    }
+}
+
+[data-bs-theme="dark"] {
+    #description-unlocked {
+        background-color: colours.$dark-item-background;
+    }
+}
+
+[data-bs-theme="light"] {
+    #description-unlocked {
+        background-color: colours.$light-item-background;
+    }
+
+    #description-wrapper,
+    #priorities {
+        background-color: colours.$light-accordion-body;
+    }
+
+    .title,
+    .input-group-text,
+    #date {
+        color: white;
     }
 }
