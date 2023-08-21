@@ -2,7 +2,7 @@ import '../scss/styles.scss'
 import * as bootstrap from 'bootstrap' 
 
 import { HighItem, MediumItem, LowItem } from "./classes";
-import { setDarkTheme, setLightTheme, setNightlifeTheme } from "./themes";
+import { setDarkTheme, setLightTheme } from "./themes";
 
 const submitNewItem = (() => {
     const submitBtn = document.getElementById("submitItem");
@@ -42,11 +42,6 @@ const setThemes = (() => {
     const darkThemeBtn = document.getElementById("dark-mode");
     darkThemeBtn.addEventListener("click", () => {
         setDarkTheme();
-    });
-
-    const nightlifeThemeBtn = document.getElementById("nightlife-mode");
-    nightlifeThemeBtn.addEventListener("click", () => {
-        setNightlifeTheme();
     });
 
     const lightThemeBtn = document.getElementById("light-mode");

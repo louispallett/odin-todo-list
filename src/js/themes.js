@@ -1,4 +1,4 @@
-export {setDarkTheme, setNightlifeTheme, setLightTheme};
+export {setDarkTheme, setLightTheme};
 
 const body = document.querySelector(".body");
 const html = document.querySelector("html");
@@ -14,10 +14,6 @@ const themeDetector = (() => {
 const setDarkTheme = (() => {
     // body.removeAttribute("id", "nightlife-set");
     html.setAttribute("data-bs-theme", "dark");
-});
-
-const setNightlifeTheme = (() => {
-    // body.setAttribute("id", "nightlife-set");
 });
 
 const setLightTheme = (() => {
