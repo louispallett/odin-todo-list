@@ -1,7 +1,10 @@
+@use "colours";
+
 #menu {
     position: absolute;
     left: 10px;
     top: 10px;
+    border: none;
 }
 
 #menu-close {
@@ -71,4 +74,13 @@
 #nightlife-mode:hover {
     // background-color: rgb(154, 154, 154);
     border-radius: 10px;
+}
+
+[data-bs-theme="dark"] {
+    #menu {
+        background-color: colours.$dark-button;
+        &:hover {
+            background-color: colours.$dark-button-hover;
+        }
+    }
 }

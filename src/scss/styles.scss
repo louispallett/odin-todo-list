@@ -14,10 +14,6 @@ body {
     font-family: Segoe UI, sans-serif;
 }
 
-#nightlife-set {
-    // background-image: url("../background.jpg");
-}
-
 body, html {
     margin:0;
     padding:0;
@@ -33,36 +29,18 @@ button {
     font-weight: bold !important;
 }
 
-input,
-textarea,
-select {
-    // color: white !important;
-}
-
-@media (prefers-color-scheme: light) {
-    // body {
-    //     background-color: aliceblue;
-    // }
-}
-
-@media (prefers-color-scheme: dark) {
-    // #nightlife-set {
-    //     background-image: url("../background.jpg");
-    // }
-
-    // * {
-    //     color: white;
-    // }
-
-    // .input-group-text,
-    // button {
-    //     background-color: #303461 !important;
-    //     border: 1px solid #303461 !important;
-    // }
-}
-
 [data-bs-theme="dark"] {
     body {
         background-image: url("../background.jpg");
+    }
+
+    .accordion-button {
+        background-color: #303461;
+    }
+}
+
+[data-bs-theme="light"] {
+    body {
+        background-image: url("../light-background.jpg");
     }
 }

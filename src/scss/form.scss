@@ -1,16 +1,17 @@
-.mb-3 > label {
-    // background-color: rgb(14, 115, 247); 
-    // border: 1px solid rgb(14, 115, 247); 
-    // color: white;
-}
+@use "colours";
 
-.prio-deadline {
-    display: flex;
-    justify-content: space-between;
-}
+[data-bs-theme="dark"] {
+    .input-group > label,
+    button[type="submit"] {
+        background-color: colours.$dark-button;
+        border: none;
+    }
 
-@media(prefers-color-scheme: dark) {
-    // .input-group-text {
-    //     color: white !important;
-    // }
+    button[type="submit"]:hover {
+        background-color: colours.$dark-button-hover;
+    }
+
+    .accordion-body {
+        background-color: colours.$dark-item-background;
+    }
 }
