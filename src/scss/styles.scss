@@ -31,12 +31,38 @@ body, html {
 .input-group-text,
 button {
     font-weight: bold !important;
-    // background-color: #303461 !important;
-    // border: 1px solid #303461 !important;
 }
 
 input,
 textarea,
 select {
     // color: white !important;
+}
+
+@media (prefers-color-scheme: light) {
+    // body {
+    //     background-color: aliceblue;
+    // }
+}
+
+@media (prefers-color-scheme: dark) {
+    // #nightlife-set {
+    //     background-image: url("../background.jpg");
+    // }
+
+    // * {
+    //     color: white;
+    // }
+
+    // .input-group-text,
+    // button {
+    //     background-color: #303461 !important;
+    //     border: 1px solid #303461 !important;
+    // }
+}
+
+[data-bs-theme="dark"] {
+    body {
+        background-image: url("../background.jpg");
+    }
 }
