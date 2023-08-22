@@ -48,13 +48,20 @@
     & > div:hover {
         border-radius: 10px;
         cursor: pointer;
-        background-color: rgb(154, 154, 154);
     }
 }
 
 [data-bs-theme="dark"] {
     #description-unlocked {
         background-color: colours.$dark-item-background;
+    }
+
+    #editGreen {
+        color: rgb(11, 236, 11);
+    }
+
+    #icon-wrapper > div:hover {
+        background-color: rgb(154, 154, 154);
     }
 }
 
@@ -72,5 +79,13 @@
     .input-group-text,
     #date {
         color: white;
+    }
+
+    #editGreen {
+        color: rgb(7, 190, 7);
+    }
+
+    #icon-wrapper > div:hover {
+        background-color: rgb(108, 252, 233);
     }
 }
