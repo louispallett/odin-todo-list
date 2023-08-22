@@ -18,8 +18,7 @@ const removeFromStorage = ((title) => {
     titles.splice(titleItem, 1);
     localStorage.setItem("titles", JSON.stringify(titles));
 
-    // Although this now works...should we remove it from the local storage too?
-    localStorage.removeItem(JSON.stringify(title)); // NOT WORKING!
+    localStorage.removeItem(JSON.stringify(title));
 });
 
 const getLocalStorage =(() => {
