@@ -87,6 +87,9 @@
             <div>Light Mode</div>
           </div>
         </div>
+        <div class="container" id="clear-all-wrapper">
+          <button class="btn btn-danger" id="clear-all-btn">Clear Items</button>
+        </div>
         <div class="container" id="creator-links">
           <a href="https://github.com/louispallett/odin-todo-list/tree/main" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
@@ -97,5 +100,15 @@
         </div>
       </div>
     </div>
+    <dialog id="clear-all-form">
+      <form>
+        <p><strong>Warning</strong>: This will delete all items on the page.</p>
+        <p>Are you <i>sure</i> you want to do this?</p>
+        <div>
+          <button value="cancel" formmethod="dialog">Cancel</button>
+          <button id="confirm-clear-all" class="btn btn-danger" value="default">Yes, delete all Items</button>
+        </div>
+      </form>
+    </dialog>
   </body>
 </html>
