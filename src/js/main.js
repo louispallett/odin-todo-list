@@ -50,9 +50,16 @@ const setThemes = (() => {
     });
 })();
 
-    // RADIO BUTTON TITLE ISSUE
-    // Because the radio buttons are based on this.Title, it is possible for a bug to occur if the user sets
-    // two or more items with the same title, as the for, name, and id of these two seperate items would be 
-    // the same. A possible fix is that when each instance of a class is created, a unique number is created
-    // (a random, say 6 digit number), and that is used instead of this.title. The chances of two being the 
-    // same are therefore much less likely (and not caused by the user).
+const clearAll = (() => {
+    const clearAllBtn = document.getElementById("clear-all-btn");
+    const clearAllDialogue = document.getElementById("clear-all-form");
+
+    clearAllBtn.addEventListener("click", () => {
+        clearAllDialogue.showModal();
+    });
+
+    const confirmClearAll = document.getElementById("confirm-clear-all");
+    confirmClearAll.addEventListener("click", (event) => {
+        event.preventDefault();
+    })
+})();

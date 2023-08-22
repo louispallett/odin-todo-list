@@ -11,8 +11,6 @@ const themeDetector = (() => {
     }
 })();
 
-
-
 const setDarkTheme = (() => {
     // body.removeAttribute("id", "nightlife-set");
     html.setAttribute("data-bs-theme", "dark");
