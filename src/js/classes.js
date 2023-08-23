@@ -1,4 +1,5 @@
 import { addToStorage, removeFromStorage, addTitle } from "./storage";
+import { itemScrollHeight } from "./textarea-resize";
 export { HighItem, MediumItem, LowItem };
 
 const items = [];
@@ -64,6 +65,9 @@ Item.prototype.pushItem = function() {
     descriptionElement.disabled = true;
     descriptionElement.setAttribute("id", "description-locked");
     descriptionElement.value = `${this.description}`;
+// >>>>>>>>> The below item works when initially submitting the form, but it then resets back to min height when 
+//           the page is reloaded!
+            descriptionElement.style.height = itemScrollHeight;
     descriptionWrapper.appendChild(descriptionElement);
     collapseElement.appendChild(descriptionWrapper);
 
