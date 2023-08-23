@@ -1,5 +1,5 @@
 import { addToStorage, removeFromStorage, addTitle } from "./storage";
-export { HighItem, MediumItem, LowItem, clearAll };
+export { HighItem, MediumItem, LowItem };
 
 const items = [];
 
