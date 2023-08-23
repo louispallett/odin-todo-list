@@ -3,6 +3,7 @@ import * as bootstrap from 'bootstrap'
 
 import { HighItem, MediumItem, LowItem } from "./classes";
 import { setDarkTheme, setLightTheme } from "./themes";
+import { formTextareaResize } from './textarea-resize';
 
 const submitNewItem = (() => {
     const submitBtn = document.getElementById("submitItem");
