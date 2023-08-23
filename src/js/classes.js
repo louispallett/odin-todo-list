@@ -1,5 +1,5 @@
 import { addToStorage, removeFromStorage, addTitle } from "./storage";
-export { HighItem, MediumItem, LowItem };
+export { HighItem, MediumItem, LowItem, clearAll };
 
 let items = [];
 
@@ -232,3 +232,21 @@ class LowItem extends Item {
         addToStorage(this.title, this);
     }
 }
+
+const clearAll = (() => {
+    const clearAllBtn = document.getElementById("clear-all-btn");
+    const clearAllDialogue = document.getElementById("clear-all-form");
+
+    clearAllBtn.addEventListener("click", () => {
+        clearAllDialogue.showModal();
+    });
+
+    const confirmClearAll = document.getElementById("confirm-clear-all");
+    confirmClearAll.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        localStorage.clear();
+        items = [];
+        location.reload();
+    })
+})();
