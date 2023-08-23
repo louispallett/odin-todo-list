@@ -1,7 +1,7 @@
 import { HighItem, MediumItem, LowItem } from "./classes";
 export { addToStorage, removeFromStorage, addTitle }
 
-let titles = [];
+const titles = [];
 
 const addTitle = ((title) => {
     titles.push(title);

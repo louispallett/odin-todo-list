@@ -3,7 +3,10 @@ export {setDarkTheme, setLightTheme};
 const body = document.querySelector(".body");
 const html = document.querySelector("html");
 
+
 const themeDetector = (() => {
+
+
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         html.setAttribute("data-bs-theme", "dark");
     } else {

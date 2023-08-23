@@ -1,7 +1,7 @@
 import { addToStorage, removeFromStorage, addTitle } from "./storage";
 export { HighItem, MediumItem, LowItem, clearAll };
 
-let items = [];
+const items = [];
 
 class Item {
     constructor(title, description, deadline) {
@@ -246,7 +246,9 @@ const clearAll = (() => {
         event.preventDefault();
 
         localStorage.clear();
-        items = [];
+        while(items.length > 0) {
+            items.pop();
+        }
         location.reload();
     })
 })();
