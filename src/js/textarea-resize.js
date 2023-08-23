@@ -1,6 +1,4 @@
-export { formTextareaResize, itemScrollHeight }
-
-let itemScrollHeight;
+export { formTextareaResize }
 
 const formTextareaResize = (() => {
     const txHeight = 16;
@@ -17,8 +15,6 @@ const formTextareaResize = (() => {
     
     function OnInput(e) {
         this.style.height = 0;
-        itemScrollHeight = (this.scrollHeight) + "px";
-        this.style.height = itemScrollHeight;
-        return itemScrollHeight;
+        this.style.height = (this.scrollHeight) + "px";
     }
 })();
