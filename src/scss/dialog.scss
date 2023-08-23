@@ -1,0 +1,30 @@
+@use "colours";
+
+dialog {
+    border-radius: 10px;
+    & > form > div {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+#clear-all-wrapper {
+    display: flex;
+    margin-bottom: 20px;
+    & > button {
+        flex: 1;
+    }
+}
+
+[data-bs-theme="dark"] {
+    dialog {
+        border: none;
+    }
+}
+
+[data-bs-theme="light"] {
+    dialog {
+        background-color: colours.$light-item-background;
+        border: none;
+    }
+}
