@@ -5,6 +5,11 @@ import { HighItem, MediumItem, LowItem } from "./classes";
 import { setDarkTheme, setLightTheme } from "./themes";
 import { formTextareaResize } from './textarea-resize';
 
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    form.reset();
+});
+
 const submitNewItem = (() => {
     const submitBtn = document.getElementById("submitItem");
 
