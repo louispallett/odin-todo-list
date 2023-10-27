@@ -7,4 +7,6 @@ Credits:
 
 "Dark theme" background image: https://unsplash.com/photos/oCZHIa1D4EU
 
+Favicon from bytedance at https://www.svgrepo.com/svg/388146/notes
+
 Icons from Bootstrap Icons
