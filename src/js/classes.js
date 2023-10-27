@@ -1,4 +1,5 @@
 import { addToStorage, removeFromStorage, addTitle } from "./storage";
+import { showDate } from "./dates";
 export { HighItem, MediumItem, LowItem };
 
 const items = [];
@@ -43,7 +44,7 @@ Item.prototype.pushItem = function() {
     titleElement.textContent = `${this.title}`;
     const dueDate = document.createElement("div");
     dueDate.setAttribute("id", "date");
-    dueDate.textContent = `Complete by: ${this.deadline}`;
+    dueDate.textContent = showDate(this.deadline);
     buttonWrapper.appendChild(titleElement);
     buttonWrapper.appendChild(dueDate);
     accordionButton.appendChild(buttonWrapper);
