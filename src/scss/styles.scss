@@ -7,45 +7,49 @@
 @import "bootstrap/scss/bootstrap";
 
 @font-face {
-    font-family: "custom-font";
-    src: url("../custom-font.woff2") format("woff2"),
+  font-family: "custom-font";
+  src:
+    url("../custom-font.woff2") format("woff2"),
     url("../custom-font.woff") format("woff");
 }
 
 body {
-    font-family: Segoe UI, sans-serif;
+  font-family:
+    Segoe UI,
+    sans-serif;
 }
 
-body, html {
-    margin:0;
-    padding:0;
+body,
+html {
+  margin: 0;
+  padding: 0;
 }
 
 * {
-    box-sizing:border-box; 
+  box-sizing: border-box;
 }
 
 .input-group-text,
 button {
-    font-weight: bold !important;
+  font-weight: bold !important;
 }
 
 [data-bs-theme="dark"] {
-    body {
-        background-image: url("../background.jpg");
-    }
+  body {
+    background-image: url("../background.jpg");
+  }
 
-    .accordion-button {
-        background-color: colours.$dark-button;
-    }
+  .accordion-button {
+    background-color: colours.$dark-button;
+  }
 }
 
 [data-bs-theme="light"] {
-    body {
-        background-image: url("../light-background.jpg");
-    }
+  body {
+    background-image: url("../light-background.jpg");
+  }
 
-    .accordion-button {
-        background-color: colours.$light-button;
-    }
+  .accordion-button {
+    background-color: colours.$light-button;
+  }
 }

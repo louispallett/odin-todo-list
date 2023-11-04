@@ -1,42 +1,42 @@
 #content-outer {
-    display:block;
+  display: block;
+  padding: 40px;
+  margin: auto;
+  width: clamp(300px, 700px, 1000px);
+  font-size: 1.5rem;
+  min-height: 300px;
+  max-width: 100%;
+  & > div {
+    min-height: 600px;
+    border-radius: 20px;
     padding: 40px;
-    margin: auto;
-    width: clamp(300px, 700px, 1000px);
-    font-size: 1.5rem;
-    min-height: 300px;
-    max-width: 100%;
-    & > div {
-        min-height: 600px;
-        border-radius: 20px;
-        padding: 40px;
-    }
+  }
 }
 
 .accordion-item {
-    min-width: 200px; 
+  min-width: 200px;
 }
 
 #new-holder {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-weight: bold;
-    padding-bottom: 10px;
-    gap: 20px;
-    font-family: "custom-font";
-    & > div {
-        color: rgb(221, 221, 221);
-    }
-    & > div > div:first-child {
-        font-size: 2rem;
-    }
-    & > div > div:nth-child(2) {
-        font-size: 1.2rem;
-    }
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  padding-bottom: 10px;
+  gap: 20px;
+  font-family: "custom-font";
+  & > div {
+    color: rgb(221, 221, 221);
+  }
+  & > div > div:first-child {
+    font-size: 2rem;
+  }
+  & > div > div:nth-child(2) {
+    font-size: 1.2rem;
+  }
 }
 
 .main-icon {
-    padding: 20px;
-    background-image: url(../notepad.svg);
+  padding: 20px;
+  background-image: url(../notepad.svg);
 }

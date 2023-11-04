@@ -1,96 +1,96 @@
 @use "colours";
 
 #date {
-    font-style: italic;
-    font-weight: 200;
+  font-style: italic;
+  font-weight: 200;
 }
 
 .accordion-body {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 #description-wrapper,
 #description-locked {
-    background: none;
-    border: none;
+  background: none;
+  border: none;
 }
 
 #description-wrapper > textarea {
-    height: 100px;
+  height: 100px;
 }
 
 #description-unlocked {
-    border: none;
+  border: none;
 }
 
 .title {
-    font-weight: bold;
-    font-size: 1.1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 #priorities {
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 5px;
 }
 
 .btn-group > label {
-    border: none;
-    font-weight: bold;
+  border: none;
+  font-weight: bold;
 }
 
 #icon-wrapper {
-    background-position:center;
-    display: flex;
-    & > div {
-        padding: 5px;
-        margin: 2.5px;
-    }
-    & > div:hover {
-        border-radius: 10px;
-        cursor: pointer;
-    }
+  background-position: center;
+  display: flex;
+  & > div {
+    padding: 5px;
+    margin: 2.5px;
+  }
+  & > div:hover {
+    border-radius: 10px;
+    cursor: pointer;
+  }
 }
 
 [data-bs-theme="dark"] {
-    #description-unlocked {
-        background-color: colours.$dark-item-background;
-    }
+  #description-unlocked {
+    background-color: colours.$dark-item-background;
+  }
 
-    #editGreen {
-        color: rgb(11, 236, 11);
-    }
+  #editGreen {
+    color: rgb(11, 236, 11);
+  }
 
-    #icon-wrapper > div:hover {
-        background-color: rgb(154, 154, 154);
-    }
+  #icon-wrapper > div:hover {
+    background-color: rgb(154, 154, 154);
+  }
 }
 
 [data-bs-theme="light"] {
-    #description-unlocked {
-        background-color: colours.$light-item-background;
-    }
+  #description-unlocked {
+    background-color: colours.$light-item-background;
+  }
 
-    #description-wrapper,
-    #priorities {
-        background-color: colours.$light-accordion-body;
-    }
+  #description-wrapper,
+  #priorities {
+    background-color: colours.$light-accordion-body;
+  }
 
-    .title,
-    .input-group-text,
-    #date {
-        color: white;
-    }
+  .title,
+  .input-group-text,
+  #date {
+    color: white;
+  }
 
-    #editGreen {
-        color: rgb(7, 190, 7);
-    }
+  #editGreen {
+    color: rgb(7, 190, 7);
+  }
 
-    #icon-wrapper > div:hover {
-        background-color: rgb(108, 252, 233);
-    }
+  #icon-wrapper > div:hover {
+    background-color: rgb(108, 252, 233);
+  }
 }
